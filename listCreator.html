@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="https://kit.fontawesome.com/d5d5f43f03.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="lc-leftCol">
+            <div id="lc-leftGrp">
+                <div id="lc-nutInfoTitle" class="lc-leftColTtl">
+                    <h2>Nutrition Info</h2>
+                </div>
+                <div id="lc-nutritionInfo" class="lc-leftColCont">
+                    <!-- dynamic -->
+                    <h4 id="lc-nutritionMealTtl">Crispy Chili Turkey Noodles</h4>
+                    <p>Per serving:</p>
+                    <!-- Temp -->
+                    <table id="lc-nutritionTable">
+                        <tr class="lc-nutritionTblRow">
+                            <td>Calories</td>
+                            <td>200</td>
+                        </tr>
+                        <tr class="lc-nutritionTblRow">
+                            <td>Fat</td>
+                            <td>10g</td>
+                        </tr>
+                        <tr class="lc-nutritionTblRow">
+                            <td>Saturates</td>
+                            <td>300mg</td>
+                        </tr>
+                        <tr class="lc-nutritionTblRow">
+                            <td>Carbohydrates</td>
+                            <td>30g</td>
+                        </tr>
+                        <tr class="lc-nutritionTblRow">
+                            <td>Sugars</td>
+                            <td>5g</td>
+                        </tr>
+                        <tr class="lc-nutritionTblRow">
+                            <td>Fibre</td>
+                            <td>15g</td>
+                        </tr>
+                        <tr class="lc-nutritionTblRow">
+                            <td>Protein</td>
+                            <td>10g</td>
+                        </tr>
+                    </table>
+                    <!-- Temp -->                     
+                </div>
+                <div id="lc-SelectedTitle" class="lc-leftColTtl">
+                    <h2>Selected</h2>
+                </div>
+                <div id="lc-selected" class="lc-leftColCont">
+                    <!-- dynamic -->
+                    <!-- Temp -->
+                    <table id="lc-selectedTable">
+                        <tr>
+                            <th id="lc-selectedMealCol">Meal</th>
+                            <th>Remove</th>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Crispy Chili Turkey Noodles</td>
+                            <td><i class="fa-solid fa-minus"></i></td>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Crispy Chili Turkey Noodles</td>
+                            <td><i class="fa-solid fa-minus"></i></td>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Crispy Chili Turkey Noodles</td>
+                            <td><i class="fa-solid fa-minus"></i></td>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Crispy Chili Turkey Noodles</td>
+                            <td><i class="fa-solid fa-minus"></i></td>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Crispy Chili Turkey Noodles</td>
+                            <td><i class="fa-solid fa-minus"></i></td>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Crispy Chili Turkey Noodles</td>
+                            <td><i class="fa-solid fa-minus"></i></td>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Crispy Chili Turkey Noodles</td>
+                            <td><i class="fa-solid fa-minus"></i></td>
+                        </tr>
+                    </table>
+                    <!-- Temp -->
+                </div>
+
+                <div id="lc-finishBtns">
+                    <ul id="lc-genResBtns">
+                        <li class="primaryColLi"><button id="lc-resetBtn" class="primaryColBtns">reset</button></li>
+                        <li class="secondaryColLi"><button id="lc-generateNumBtn" class="secondaryColBtns">generate</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <nav id="lc-nav" class="navbar">
+            <ul id="mainNav">
+                <li><h2 id="navMenuTtl">menu</h2></li>
+                <li><button class="mainNavBtn">home</button></li>
+                <li><button class="mainNavBtn">support</button></li>
+            </ul>
+            <ul id="lc-addBtn">
+                <li class="primaryColLi"><button id="lc-peopleNumBtn" class="primaryColBtns">No of People</button></li>
+                <li class="primaryColLi"><button id="lc-addRecipeBtn" class="primaryColBtns">add recipe</button></li>
+            </ul>
+        </nav>
+        <div id="lc-recipeDisp">
+            <div id="lc-recSelTitle">
+                <h1>Recipe Select</h1>
+            </div>
+            <div id="lc-recipeBox">
+                <!-- dynamic -->
+                <!-- TEMP -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFavInfo">
+                                <i class="fa-solid fa-heart"></i>
+                                <i class="fa-solid fa-info"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
+                        <!-- front side content goes here -->
+                            <div class="lc-recipeTtl">
+                                <h5>Crispy Chili Turkey Noodles</h5>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                        <!-- back side content goes here -->
+                            <div class="lc-recipeAction">
+                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
+                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
+                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
+                            </div>
+                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
+                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- TEMP -->
+            </div>
+        </div>
+        <script src="js/recipes.js"></script>
+        <script src="js/recipesRestore.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
