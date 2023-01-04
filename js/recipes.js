@@ -24,8 +24,10 @@ const recipes = [
         protein: 40,
         description: 'Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that\'s low in fat but big on flavour',
         source: 'https://www.bbcgoodfood.com/recipes/crispy-chilli-turkey-noodles',
+        imgPath: '/Users/henrycrompton-smith/Desktop/WebDev/Listify/img/CrispyChiliTurkeyNoodles.jpg',
         favorite: false,
         selected: false,
+        selectedNo: 0,
         current: false
     },
     {
@@ -53,8 +55,10 @@ const recipes = [
         protein: 33,
         description: '',
         source: '',
+        imgPath: '',
         favorite: false,
         selected: false,
+        selectedNo: 0,
         current: false
     },
     {
@@ -81,8 +85,11 @@ const recipes = [
         fibre: 6,
         protein: 23,
         description: '',
+        source: '',
+        imgPath: '',
         favorite: false,
         selected: false,
+        selectedNo: 0,
         current: false
     }
     /* {
@@ -110,8 +117,10 @@ const recipes = [
         protein: ,
         description: '',
         source: '',
+        imgPath: '',
         favorite: false,
         selected: false,
+        selectedNo: 0,
         current: false
     }*/
     /* {
@@ -138,8 +147,10 @@ const recipes = [
         protein: ,
         description: '',
         source: '',
+        imgPath: '',
         favorite: false,
         selected: false,
+        selectedNo: 0,
         current: false
     }*/
 ]

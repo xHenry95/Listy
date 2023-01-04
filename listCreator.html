@@ -12,84 +12,67 @@
     <body>
         <div id="lc-leftCol">
             <div id="lc-leftGrp">
-                <div id="lc-nutInfoTitle" class="lc-leftColTtl">
-                    <h2>Nutrition Info</h2>
+                <div id="lc-logoTtl">
+                    <h1>LOGO</h1>
                 </div>
-                <div id="lc-nutritionInfo" class="lc-leftColCont">
-                    <!-- dynamic -->
-                    <h4 id="lc-nutritionMealTtl">Crispy Chili Turkey Noodles</h4>
-                    <p>Per serving:</p>
-                    <!-- Temp -->
-                    <table id="lc-nutritionTable">
-                        <tr class="lc-nutritionTblRow">
-                            <td>Calories</td>
-                            <td>200</td>
-                        </tr>
-                        <tr class="lc-nutritionTblRow">
-                            <td>Fat</td>
-                            <td>10g</td>
-                        </tr>
-                        <tr class="lc-nutritionTblRow">
-                            <td>Saturates</td>
-                            <td>300mg</td>
-                        </tr>
-                        <tr class="lc-nutritionTblRow">
-                            <td>Carbohydrates</td>
-                            <td>30g</td>
-                        </tr>
-                        <tr class="lc-nutritionTblRow">
-                            <td>Sugars</td>
-                            <td>5g</td>
-                        </tr>
-                        <tr class="lc-nutritionTblRow">
-                            <td>Fibre</td>
-                            <td>15g</td>
-                        </tr>
-                        <tr class="lc-nutritionTblRow">
-                            <td>Protein</td>
-                            <td>10g</td>
-                        </tr>
-                    </table>
-                    <!-- Temp -->                     
-                </div>
-                <div id="lc-SelectedTitle" class="lc-leftColTtl">
-                    <h2>Selected</h2>
+                <div id="lc-peopleSelect">
+                    <p>No. of people:</p>
+                    <select name="lc-noOfPeople">
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
                 </div>
                 <div id="lc-selected" class="lc-leftColCont">
                     <!-- dynamic -->
                     <!-- Temp -->
                     <table id="lc-selectedTable">
                         <tr>
-                            <th id="lc-selectedMealCol">Meal</th>
-                            <th>Remove</th>
+                            <th id="lc-selectedMealCol"><h2>Meals added</h2></th>
+                            <th></th>
+                            <th></th>
                         </tr>
                         <tr class="lc-selectedTblRow">
                             <td>Crispy Chili Turkey Noodles</td>
-                            <td><i class="fa-solid fa-minus"></i></td>
+                            <td>(<span>1</span>)</td>
+                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Chicken Ceasar Salad</td>
+                            <td>(<span>1</span>)</td>
+                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Spagetti Carbonara</td>
+                            <td>(<span>1</span>)</td>
+                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Pan-Fried Salmon</td>
+                            <td>(<span>1</span>)</td>
+                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
+                        </tr>
+                        <tr class="lc-selectedTblRow">
+                            <td>Beef Wellington with Roast Potatos</td>
+                            <td>(<span>1</span>)</td>
+                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
                         </tr>
                         <tr class="lc-selectedTblRow">
                             <td>Crispy Chili Turkey Noodles</td>
-                            <td><i class="fa-solid fa-minus"></i></td>
+                            <td>(<span>1</span>)</td>
+                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
                         </tr>
                         <tr class="lc-selectedTblRow">
                             <td>Crispy Chili Turkey Noodles</td>
-                            <td><i class="fa-solid fa-minus"></i></td>
-                        </tr>
-                        <tr class="lc-selectedTblRow">
-                            <td>Crispy Chili Turkey Noodles</td>
-                            <td><i class="fa-solid fa-minus"></i></td>
-                        </tr>
-                        <tr class="lc-selectedTblRow">
-                            <td>Crispy Chili Turkey Noodles</td>
-                            <td><i class="fa-solid fa-minus"></i></td>
-                        </tr>
-                        <tr class="lc-selectedTblRow">
-                            <td>Crispy Chili Turkey Noodles</td>
-                            <td><i class="fa-solid fa-minus"></i></td>
-                        </tr>
-                        <tr class="lc-selectedTblRow">
-                            <td>Crispy Chili Turkey Noodles</td>
-                            <td><i class="fa-solid fa-minus"></i></td>
+                            <td>(<span>1</span>)</td>
+                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
                         </tr>
                     </table>
                     <!-- Temp -->
@@ -97,440 +80,334 @@
 
                 <div id="lc-finishBtns">
                     <ul id="lc-genResBtns">
-                        <li class="primaryColLi"><button id="lc-resetBtn" class="primaryColBtns">reset</button></li>
-                        <li class="secondaryColLi"><button id="lc-generateNumBtn" class="secondaryColBtns">generate</button></li>
+                        <li><button id="lc-clearLstBtn" class="secondaryColBtns">Clear list</button></li>
+                        <li><button id="lc-createLstBtn" class="primaryColBtns">Make list</button></li>
                     </ul>
                 </div>
             </div>
         </div>
         <nav id="lc-nav" class="navbar">
             <ul id="mainNav">
-                <li><h2 id="navMenuTtl">menu</h2></li>
-                <li><button class="mainNavBtn">home</button></li>
-                <li><button class="mainNavBtn">support</button></li>
-            </ul>
-            <ul id="lc-addBtn">
-                <li class="primaryColLi"><button id="lc-peopleNumBtn" class="primaryColBtns">No of People</button></li>
-                <li class="primaryColLi"><button id="lc-addRecipeBtn" class="primaryColBtns">add recipe</button></li>
+                <li><button class="mainNavBtn mainNavBtnActive">Show all meals</button></li>
+                <li><button class="mainNavBtn greyBtnHvr">Favourite meals</button></li>
             </ul>
         </nav>
         <div id="lc-recipeDisp">
-            <div id="lc-recSelTitle">
-                <h1>Recipe Select</h1>
-            </div>
             <div id="lc-recipeBox">
                 <!-- dynamic -->
                 <!-- TEMP -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+               
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFavInfo">
-                                <i class="fa-solid fa-heart"></i>
-                                <i class="fa-solid fa-info"></i>
-                            </div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
+                <div class="lc-recipeCard" id="lc-card1">
+                    <div class="lc-recipePhoto" id="lc-card1img">
+                        <div class="lc-favBg"></div>
+                        <i class="fa-regular fa-heart cardFav"></i>
+                    </div>
+                    <div class="lc-recipeInfo" id="lc-card1info">
+                        <div class="lc-recipeText" id="lc-card1text">
+                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
+                            <div class="lc-recipePopupBtns" id="lc-card1btns">
+                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
                             </div>
                         </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
+                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
+                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
+                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
                         </div>
                     </div>
                 </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front lc-recipeCard" id="lc-card1">
-                        <!-- front side content goes here -->
-                            <div class="lc-recipeTtl">
-                                <h5>Crispy Chili Turkey Noodles</h5>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                        <!-- back side content goes here -->
-                            <div class="lc-recipeAction">
-                                <div class="lc-addRecipe recAc"><i class="fa-solid fa-plus"></i></div>
-                                <div class="lc-removeRecipe recAc"><i class="fa-solid fa-minus"></i></div>
-                                <div class="lc-recipeRef recAc"><i class="fa-solid fa-link"></i></div>
-                            </div>
-                            <p class="lc-recipeDesc">Crisp-fried turkey mince in a chilli, soy and garlic sauce atop udon noodles makes for a savoury 20-minute meal that's low in fat but big on flavour</p>
-                            <div class="lc-recipeFav"><i class="fa-regular fa-heart"></i></div>
-                        </div>
-                    </div>
-                </div>
-
-
+                
                 <!-- TEMP -->
             </div>
         </div>
         <script src="js/recipes.js"></script>
-        <script src="js/recipesRestore.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

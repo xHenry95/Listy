@@ -1,22 +1,29 @@
 /* Global */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 :root {
-  --background1: #0b1a2b;
-  --background2: #060612;
+  --background1: #ffffff;
+  --background2: #f8f8f8;
   --primary1: #f9522f;
-  --text: #ffffff;
+  --text: #000000;
+  --mainGrey: rgb(105, 105, 105);
   --secondary: #57c59f;
   --mainTransition: 0.3s;
   --paraSpacing: 0.05rem;
   --wideSpacing: 0.2rem;
+  /* DARK MODE */
+  --darkBackground1: #0b1a2b;
+  --darkBackground2: #060612;
+  --darkPrimary1: #f9522f;
+  --darkText: #ffffff;
+  --darkSecondary: #57c59f;
 }
 
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 500;
   color: var(--text);
-  letter-spacing: var(--paraSpacing);
+  /* letter-spacing: var(--paraSpacing); */
 }
 
 body {
@@ -33,6 +40,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 90px;
 }
 
 ul {
@@ -41,7 +49,7 @@ ul {
 
 button {
   border: none;
-  text-transform: uppercase;
+  text-transform: initial !important;
   cursor: pointer;
 }
 
@@ -50,27 +58,15 @@ h1 {
   font-weight: 700;
 }
 
-h2 {
-  font-weight: 300;
-}
-
 p {
-    font-size: 0.8rem;
-    letter-spacing: normal;
-    line-height: 1.2rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
 }
 
 #mainNav {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-#navMenuTtl {
-  text-transform: uppercase;
-  font-weight: 300;
-  padding-right: 20px;
-  font-size: 1.5rem;
 }
 
 #mainNav:nth-child(1) {
@@ -80,120 +76,110 @@ p {
 .mainNavBtn {
   background: none;
   border: none;
-  color: var(--text);
+  color: var(--mainGrey);
   margin-left: 10px;
   margin-right: 10px;
   font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 10px 5px 10px;
+  border-radius: 25px 25px 25px 25px;
   transition: var(--mainTransition);
+  border: 1px solid var(--mainGrey);
+}
+
+.mainNavBtnActive {
+    border: 1px solid black !important;
+    color: var(--text) !important;
 }
 
 .mainNavBtn:hover {
   color: var(--primary1);
 }
 
-/* --------------------------------------- listCreator.html */
 .primaryColBtns {
   background-color: var(--primary1);
-  color: var(--text);
-  border-radius: 20px 20px 20px 20px;
-  padding: 15px 20px 15px 20px; 
-  text-transform: uppercase;
+  color: white;
+  border-radius: 25px 25px 25px 25px;
   transition: var(--mainTransition);
-}
-
-.primaryColBtns:hover {
-  background-color: #dc3f20;
+  padding: 13px 20px 13px 20px;
 }
 
 .secondaryColBtns {
-  background-color: var(--secondary);
-  color: var(--text);
-  border-radius: 20px 20px 20px 20px;
-  padding: 15px 20px 15px 20px; 
-  text-transform: uppercase;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 25px 25px 25px 25px;
+  transition: var(--mainTransition);
+  padding: 13px 20px 13px 20px;
+}
+
+.greyBtnHvr {
   transition: var(--mainTransition);
 }
 
-.secondaryColBtns:hover {
-    background-color: #339371;
-  }
+.greyBtnHvr:hover {
+  color: black;
+  border-color: black;
+  cursor: pointer;
+}
+
+/* --------------------------------------- listCreator.html */
+
 /* --- */
 
 #lc-leftCol {
-  width: 400px;
+  width: 350px;
   height: 100%;
-  padding-left: 30px;
-  box-shadow: 10px 20px 30px rgba(0,0,0,0.19), 6px 6px 10px rgba(0,0,0,0.23);
+  padding-left: 75px;
 }
 
 #lc-leftGrp {
   position: absolute;
   top: 3%;
   height: 97%;
-  width: 400px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.lc-leftColTtl {
+#lc-logoTtl {
   height: 50px;
-  width: 430px;
+  width: 400px;
   display: flex;
   align-items: center;
 }
 
-.lc-leftColCont {
-  overflow: scroll;
+#lc-peopleSelect {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  align-items: center;
 }
 
-#lc-nutritionInfo {
-  height: 50%;
+#lc-peopleSelect p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#lc-peopleSelect select {
+  height: 20px;
+  margin-left: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: none;
+}
+
+.lc-leftColCont {
+  overflow: scroll;
+  top: 100px;
 }
 
 #lc-selected {
-  height: 30%;
-}
-
-#lc-nutritionMealTtl {
-  font-weight: 300;
-  letter-spacing: var(--paraSpacing);
-}
-
-#lc-nutritionTable {
-  font-weight: 300; 
-}
-
-#lc-nutritionTable {
-  border-collapse: collapse;
-}
-
-.lc-nutritionTblRow td {
-  border-bottom: 1px solid #172a40;
-}
-
-#lc-nutritionTable td:first-child {
-    text-align: left;
-}
-
-#lc-nutritionTable td:last-child {
-    text-align: right;
-}
-
-#lc-nutritionTable th {
-  width: 170px;
-  height: 30px;
-  border-bottom: 1px solid white;
-}
-
-#lc-nutritionTable td {
-  width: 170px;
-  font-size: 0.85rem;
-  padding: 10px;
+  height: 83%;
 }
 
 #lc-selectedTable {
-  font-weight: 300; 
+  font-size: 0.9rem;
 }
 
 #lc-selectedTable {
@@ -201,7 +187,8 @@ p {
 }
 
 .lc-selectedTblRow td {
-  border-bottom: 1px solid #172a40;
+  font-weight: 500;
+  font-size: 0.8rem;
 }
 
 #lc-selectedTable td:first-child, #lc-selectedTable th:first-child {
@@ -212,85 +199,58 @@ p {
   text-align: right;
 }
 
-#lc-selectedTable th {
-  height: 30px;
-  border-bottom: 1px solid white;
-  font-weight: 300;
-}
-
 #lc-selectedMealCol {
-  width: 300px;
+  width: 250px;
 }
 
 #lc-selectedTable td {
-  width: 50px;
-  font-size: 0.85rem;
-  letter-spacing: var(--paraSpacing);
-  padding: 10px;
+  width: 20px;
+  font-size: 0.8rem;
+  /* letter-spacing: var(--paraSpacing); */
+  padding: 10px 5px 5px 5px;
+}
+
+.selected-fa-xmark {
+  transition: var(--mainTransition);
+  font-size: 0.9rem;
+  color: var(--mainGrey);
 }
 
 #lc-finishBtns {
-    width: 370px;
-    height: 12%;
+  width: 300px;
+  height: 18%;
 }
 
 #lc-genResBtns {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
 }
 
-#lc-generateBtn {
-  margin-right: 10px;
-}
 
-#lc-resetBtn {
-  margin-left: 10px;
-  position: absolute;
-  left: 0px;
-}
 /* --- */
 
 #lc-nav {
   position: absolute;
-  left: 480px;
+  left: 450px;
   width: calc(100% - 480px);
   height: 12%;
 }
-
-#lc-addBtn {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  right: 5%;
-}
-
-#lc-peopleNumBtn {
-    margin-right: 10px;
-}
-
-#lc-addRecipeBtn {
-    margin-left: 10px;
-}
 /* --- */
 
-#lc-recSelTitle {
-    height: 120px;
-    display: flex;
-    align-items: center;
-}
-
 #lc-recSelTitle h1 {
-    font-weight: 500;
-    letter-spacing: var(--wideSpacing);
-    font-size: 3rem;
+  font-weight: 500;
+  /* letter-spacing: var(--wideSpacing); */
+  font-size: 3rem;
 }
 
 #lc-recipeDisp {
   position: absolute;
-  left: 480px;
+  left: 450px;
   top: 12%;
-  width: calc(100% - 480px);
+  width: calc(100% - 490px);
   height: 88%;
   display: flex;
   flex-direction: column;
@@ -299,17 +259,11 @@ p {
 
 #lc-recipeBox {
   width: 100%;
-  height: calc(100% - 120px);
+  height: 100%;
   overflow-x: hidden;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 30px;
-  }
-  
-  @media (max-width: 1024px) {
-    #lc-recipeBox {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  grid-template-columns: repeat(3, 1fr);
+
   }
   
   @media (max-width: 768px) {
@@ -326,163 +280,102 @@ p {
 /* --- */
 
 .lc-recipeCard {
-  /* height: 270px; */
-  min-width: 175px;
-  max-width: 225px;
-  /* background: linear-gradient(45deg, var(--background1), var(--background2)); */
-  border-radius: 25px;
-  box-shadow: 10px 20px 30px rgba(0,0,0,0.19), 6px 6px 10px rgba(0,0,0,0.23);
+  width: 300px;
+  height: 200px;
+  border-radius: 15px;
+  margin-bottom: 25px;
 }
 
-#lc-card1 {
+/* dynamic */
+#lc-card1img {
   background-image: url(/Users/henrycrompton-smith/Desktop/WebDev/Listify/img/CrispyChiliTurkeyNoodles.jpg);
-  background-position: center;
 }
+/* dynamic */
 
-.lc-recipeTtl {
-  position: relative;
-  margin-top: calc(270px - 25%);
-  height: 20%;
-  min-width: 175px;
-  max-width: 225px;
-  bottom: 0;
-  background: linear-gradient(45deg, var(--background1), var(--background2));
-  border-radius: 0 0 25px 25px;
-}
-
-.lc-recipeTtl h5 {
-  font-weight: 300;
-  padding-top: 10px;
-  letter-spacing: var(--wideSpacing);
-}
-
-/* --- */
-.flip-card {
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 200px;
-  height: 270px;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner { 
-  transform: rotateX(-180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
+.lc-recipePhoto {
   width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  z-index: 2;
-}
-
-.flip-card-front {
-  background-color: #bbb;
-  color: var(--text);
-}
-
-.flip-card-back {
-  background: linear-gradient(45deg, var(--background1), var(--background2));
-  color: white;
-  transform: rotateY(180deg);
-  border-radius: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.lc-recipeFavInfo {
-  transform: rotate(180deg);
-  padding: 20px;
-  z-index: 5;
-  display: flex;
-  justify-content: space-between;
-}
-
-.fa-heart, .fa-info {
-  font-size: 1.4rem;
-  transition: var(--mainTransition);
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.fa-heart:hover, .fa-info:hover {
-  cursor: pointer;
-  color: var(--secondary);
-}
-
-.lc-recipeAction {
+  height: 70%;
   position: relative;
-  height: 20%;
-  min-width: 175px;
-  max-width: 225px;
-  bottom: 0;
-  background: linear-gradient(45deg, var(--background1), var(--background2));
-  border-radius: 25px 25px 0 0;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.lc-favBg {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(248, 83, 111);
+  transform: translate(235px, -20px) rotate(45deg);
+  right: 0;
+}
+
+.cardFav {
+  color: white;
+  position: relative;
+  margin-left: 273px;
+  transform: translate(0, -41px);
+}
+
+.cardFav:hover {
+  cursor: pointer;
+}
+
+.lc-recipeInfo {
+  height: 30%;
+  padding: 5px;
   display: flex;
   flex-direction: row;
-}
-
-.recAc {
-  width: 33%;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
 }
 
-.recAc:hover {
-  cursor: pointer;
+.lc-recipeText {
+  width: 80%;
+  height: 90%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
 }
 
-.lc-addRecipe {
-  background-color: var(--secondary);
-  border-radius: 25px 0 0 0;
+.lc-recipePopupBtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 55%;
+  height: 1rem;
+}
+
+.lc-recipePopupBtns p, .lc-recipeText p {
+  margin: 0;
+}
+
+.lc-recipeText p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.lc-recipePopupBtns p {
+  color: rgb(105, 105, 105);
+  font-size: 0.85rem;
+}
+
+.lc-addRemBtns {
+  width: 20%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.fa-minus, .fa-plus {
+  font-size: 1.1rem;
+  color: rgb(105, 105, 105);
   transition: var(--mainTransition);
 }
-
-.lc-removeRecipe {
-  background-color: var(--primary1);
-  transition: var(--mainTransition);
-}
-
-.lc-recipeRef {
-  background-color: rgb(0, 140, 255);
-  border-radius: 0 25px 0 0;
-  transition: var(--mainTransition);
-}
-
-.lc-addRecipe:hover {
-  background-color: #339371;
-}
-
-.lc-removeRecipe:hover {
-  background-color: #c73c20;
-}
-
-.lc-recipeRef:hover {
-  background-color: rgb(0, 109, 198);
-}
-
-.fa-plus {
-  margin-left: 5px;
-}
-
-.fa-minus {
-  padding-left: 4px;
-}
-
-.lc-recipeDesc {
-  position: relative;
-  transform: rotate(180deg);
-}
-
-
 
 /* --- */
 
