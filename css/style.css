@@ -471,6 +471,11 @@ a:hover {
   margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid black;
+  font-size: 0.8rem;
+}
+
+.lc-compareSelect select:hover {
+    cursor: pointer;
 }
 
 .lc-compareImgPlaceHld {
@@ -479,10 +484,13 @@ a:hover {
   background-color: var(--lightestGrey);
   margin: 10px 0 10px 0;
   border-radius: 10px;
+  background-size: cover;
+  background-position: center center;
 }
 
 .lc-NutritionTbl h2 {
   font-weight: normal;
+  height: 2rem;
 }
 
 .lc-NutritionTbl table {
@@ -495,7 +503,7 @@ a:hover {
   font-size: 0.75rem;
   color: var(--lightGrey);
   font-weight: 600;
-  padding: 0 0 5px 0;
+  padding: 10px 0 0 0;
 }
 
 .lc-NutritionTbl td {

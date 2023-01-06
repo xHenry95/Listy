@@ -128,7 +128,7 @@ const recipes = [
         recipeId: 4
     },
     {
-        meal: 'Healthy chicken pasta bake',
+        meal: 'Healthy Chicken Pasta Bake',
         ingredients: [
             {ingredient: 'Wholemeal penne', measure: 300, unit: 'g', category: 'pasta & rice'},
             {ingredient: 'Olive oil', measure: 2, unit: 'tsp', category: 'sauces & oils'},

@@ -1,3 +1,4 @@
+
 /** retreivePeopleNum()
  * Retreive the number of people selected by the user from lc-noOfPeople
  */
@@ -138,21 +139,134 @@ addEventListeners();
  * Create the compare function
  *  1. Opens a dialogue with the selected recipe and allows the user to select another recipe to compare nutrition information
  */
-
+let recipeCompareId;
 function openCompareBox() {
-    const compareBtns = document.getElementsByClassName('compareBtn-js');
     const overlayBox = document.getElementById('lc-overlay');
-    
-    for (button of compareBtns) {
-        button.addEventListener('click', () => {
+    document.querySelectorAll('.compareBtn-js').forEach(button => {
+        button.addEventListener('click', event => {
             // Fade in popup
             overlayBox.classList.remove('lc-noDisplay')
             fadeOpacityIn(overlayBox);
 
-        })
-    }
+            // Parse recipeId from compare button through for compareBox1 load
+            recipeCompareId = button.dataset.recipeid;
+            // recipeCompareId = recipes.find(recipe => recipe.recipeId === parseInt(recipeDOMId));
+
+            let compareBoxLeftId = parseInt(recipeCompareId);
+            let leftBoxRecipe = recipes.find(recipe => recipe.recipeId === parseInt(compareBoxLeftId));
+            console.log(parseInt(leftBoxRecipe));
+            fillCompareSelectOptions()
+            fillCompareInfo(leftBoxRecipe);
+        });
+    });
 }
 openCompareBox()
+
+// Fill compare selection boxes
+function fillCompareSelectOptions() {
+    // Left
+    const compareSelectBoxes = document.getElementsByClassName('compareSelect-js');
+    let leftMealCompareOptions = ``
+    for (recipe of recipes) {
+        if (parseInt(recipeCompareId) === recipe.recipeId) {
+            leftMealCompareOptions += `<option selected value="${recipe.recipeId}">${recipe.meal}</option>`
+        } else {
+            leftMealCompareOptions += `<option value="${recipe.recipeId}">${recipe.meal}</option>`
+        }
+    }
+    compareSelectBoxes[0].innerHTML = leftMealCompareOptions;
+    // Right
+    let rightMealCompareOptions = `<option selected>Compare with</option>`
+    for (recipe of recipes) {
+        rightMealCompareOptions += `<option value="${recipe.recipeId}">${recipe.meal}</option>`
+    }
+    compareSelectBoxes[1].innerHTML = rightMealCompareOptions;
+}
+
+// Add event listeners to the Compare selection boxes
+let compareBoxLeftId = parseInt(recipeCompareId);
+let compareBoxRightId;
+let leftRecipeChange = false
+function GetRecipeCompareSelectId() {
+    const compareSelectBoxes = document.getElementsByClassName('compareSelect-js');
+    compareSelectBoxes[0].addEventListener('change', () => {
+        compareBoxLeftId = compareSelectBoxes[0].value;
+        console.log(compareBoxLeftId);
+        leftRecipeChange = true;
+        fillCompareInfo();
+    })
+    compareSelectBoxes[1].addEventListener('change', () => {
+        compareBoxRightId = compareSelectBoxes[1].value;
+        console.log(compareBoxRightId);
+        
+        const nutDiv2 = document.querySelectorAll('#lc-compareNutritionTbl2, #lc-compareSelect2 select');
+        nutDiv2.forEach(element => {
+            element.style.color = 'black';
+        });
+
+        fillCompareInfo();
+    })
+}
+GetRecipeCompareSelectId();
+
+// Fill compare info box 1 and 2 (left and right)
+function fillCompareInfo(leftBoxRecipe) {
+    let newLeftBoxRecipe = recipes.find(recipe => recipe.recipeId === parseInt(compareBoxLeftId));
+    let rightBoxRecipe = recipes.find(recipe => recipe.recipeId === parseInt(compareBoxRightId));
+    console.log(leftBoxRecipe);
+    console.log(rightBoxRecipe);
+    const compareImg1Box = document.getElementById('lc-compareImg1');
+    const compareTtl1 = document.getElementById('compareTtl1');
+    const kcalValTd1 = document.getElementById('kcalValue1');
+    const fatValTd1 = document.getElementById('fatValue1');
+    const satValTd1 = document.getElementById('satValue1');
+    const carbValTd1= document.getElementById('carbValue1');
+    const sugValBoxTd1 = document.getElementById('sugValue1');
+    const fibValBoxTd1 = document.getElementById('fibValue1');
+    const protValBoxTd1 = document.getElementById('protValue1');
+    const compareImg2Box = document.getElementById('lc-compareImg2');
+    const compareTtl2 = document.getElementById('compareTtl2');
+    const kcalValTd2 = document.getElementById('kcalValue2');
+    const fatValTd2 = document.getElementById('fatValue2');
+    const satValTd2 = document.getElementById('satValue2');
+    const carbValTd2 = document.getElementById('carbValue2');
+    const sugValBoxTd2 = document.getElementById('sugValue2');
+    const fibValBoxTd2 = document.getElementById('fibValue2');
+    const protValBoxTd2 = document.getElementById('protValue2');
+
+    if (!leftRecipeChange && leftBoxRecipe !== undefined) {
+        compareImg1Box.style.backgroundImage = `url(${leftBoxRecipe.imgPath})`;
+        compareTtl1.innerHTML = `${leftBoxRecipe.meal}`;
+        kcalValTd1.innerHTML = `${leftBoxRecipe.kcal}kcal`;
+        fatValTd1.innerHTML = `${leftBoxRecipe.fat}g`;
+        satValTd1.innerHTML = `${leftBoxRecipe.saturates * 100}mg`;
+        carbValTd1.innerHTML = `${leftBoxRecipe.carbs}g`;
+        sugValBoxTd1.innerHTML = `${leftBoxRecipe.sugars}g`;
+        fibValBoxTd1.innerHTML = `${leftBoxRecipe.fibre}g`;
+        protValBoxTd1.innerHTML = `${leftBoxRecipe.protein}g`;
+    } else if (newLeftBoxRecipe !== undefined) {
+        compareImg1Box.style.backgroundImage = `url(${newLeftBoxRecipe.imgPath})`;
+        compareTtl1.innerHTML = `${newLeftBoxRecipe.meal}`;
+        kcalValTd1.innerHTML = `${newLeftBoxRecipe.kcal}kcal`;
+        fatValTd1.innerHTML = `${newLeftBoxRecipe.fat}g`;
+        satValTd1.innerHTML = `${newLeftBoxRecipe.saturates * 100}mg`;
+        carbValTd1.innerHTML = `${newLeftBoxRecipe.carbs}g`;
+        sugValBoxTd1.innerHTML = `${newLeftBoxRecipe.sugars}g`;
+        fibValBoxTd1.innerHTML = `${newLeftBoxRecipe.fibre}g`;
+        protValBoxTd1.innerHTML = `${newLeftBoxRecipe.protein}g`;
+    }
+    if (rightBoxRecipe !== undefined) {
+        compareImg2Box.style.backgroundImage = `url(${rightBoxRecipe.imgPath})`;
+        compareTtl2.innerHTML = `${rightBoxRecipe.meal}`;
+        kcalValTd2.innerHTML = `${rightBoxRecipe.kcal}kcal`;
+        fatValTd2.innerHTML = `${rightBoxRecipe.fat}g`;
+        satValTd2.innerHTML = `${rightBoxRecipe.saturates * 100}mg`;
+        carbValTd2.innerHTML = `${rightBoxRecipe.carbs}g`;
+        sugValBoxTd2.innerHTML = `${rightBoxRecipe.sugars}g`;
+        fibValBoxTd2.innerHTML = `${rightBoxRecipe.fibre}g`;
+        protValBoxTd2.innerHTML = `${rightBoxRecipe.protein}g`;
+    }
+}
 
 let closePopUp = () => {
     const closePopUpBtn = document.getElementById('lc-closePopup');
@@ -160,6 +274,36 @@ let closePopUp = () => {
 
     closePopUpBtn.addEventListener('click', () => {
         fadeOpacityOut(overlayBox);
+
+        const nutDiv2 = document.querySelectorAll('#lc-compareNutritionTbl2, #lc-compareSelect2 select');
+        nutDiv2.forEach(element => {
+            element.style.color = 'var(--lightGrey)';
+        });
+        const compareImg2Box = document.getElementById('lc-compareImg2');
+        const compareTtl2 = document.getElementById('compareTtl2');
+        const kcalValTd2 = document.getElementById('kcalValue2');
+        const fatValTd2 = document.getElementById('fatValue2');
+        const satValTd2 = document.getElementById('satValue2');
+        const carbValTd2 = document.getElementById('carbValue2');
+        const sugValBoxTd2 = document.getElementById('sugValue2');
+        const fibValBoxTd2 = document.getElementById('fibValue2');
+        const protValBoxTd2 = document.getElementById('protValue2');
+
+        compareImg2Box.style.backgroundImage = `url('')`;
+        compareTtl2.innerHTML = `Compare with...`;
+        kcalValTd2.innerHTML = `0kcal`;
+        fatValTd2.innerHTML = `0g`;
+        satValTd2.innerHTML = `0mg`;
+        carbValTd2.innerHTML = `0g`;
+        sugValBoxTd2.innerHTML = `0g`;
+        fibValBoxTd2.innerHTML = `0g`;
+        protValBoxTd2.innerHTML = `0g`;
+
+        const compareSelectBoxes = document.getElementsByClassName('compareSelect-js');
+        compareSelectBoxes[1].value = 'Compare with';
+
+        compareBoxRightId = undefined;
+
     })
 }
 
@@ -249,8 +393,6 @@ function deleteRecipeBtns() {
             // Update the selected and selectedNo properties of the found recipe
             foundRecipe.selected = false;
             foundRecipe.selectedNo = 0;
-
-            
 
             for (const [i, recipe] of recipes.entries()) {
                     let numberOfPeople = retreivePeopleNum();
