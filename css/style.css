@@ -124,6 +124,16 @@ p {
   cursor: pointer;
 }
 
+select { 
+  padding-left: 2px;
+}
+
+select:focus {
+  outline: none;
+  outline: 1px solid black;
+  border-radius: 20px;
+}
+
 /* --------------------------------------- listCreator.html */
 
 /* --- */

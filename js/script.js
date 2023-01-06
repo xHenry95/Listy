@@ -279,6 +279,7 @@ let closePopUp = () => {
         nutDiv2.forEach(element => {
             element.style.color = 'var(--lightGrey)';
         });
+
         const compareImg2Box = document.getElementById('lc-compareImg2');
         const compareTtl2 = document.getElementById('compareTtl2');
         const kcalValTd2 = document.getElementById('kcalValue2');
