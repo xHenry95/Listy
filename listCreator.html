@@ -17,7 +17,7 @@
                 </div>
                 <div id="lc-peopleSelect">
                     <p>No. of people:</p>
-                    <select name="lc-noOfPeople">
+                    <select name="lc-noOfPeople" id="newPeopeNum">
                         <option value="1">1</option>
                         <option value="2" selected>2</option>
                         <option value="3">3</option>
@@ -31,48 +31,19 @@
                     </select>
                 </div>
                 <div id="lc-selected" class="lc-leftColCont">
+                    <h2>Meals added</h2>
                     <!-- dynamic -->
                     <!-- Temp -->
                     <table id="lc-selectedTable">
                         <tr>
-                            <th id="lc-selectedMealCol"><h2>Meals added</h2></th>
+                            <th id="lc-selectedMealCol"></th>
                             <th></th>
                             <th></th>
                         </tr>
                         <tr class="lc-selectedTblRow">
-                            <td>Crispy Chili Turkey Noodles</td>
-                            <td>(<span>1</span>)</td>
-                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
-                        </tr>
-                        <tr class="lc-selectedTblRow">
-                            <td>Chicken Ceasar Salad</td>
-                            <td>(<span>1</span>)</td>
-                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
-                        </tr>
-                        <tr class="lc-selectedTblRow">
-                            <td>Spagetti Carbonara</td>
-                            <td>(<span>1</span>)</td>
-                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
-                        </tr>
-                        <tr class="lc-selectedTblRow">
-                            <td>Pan-Fried Salmon</td>
-                            <td>(<span>1</span>)</td>
-                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
-                        </tr>
-                        <tr class="lc-selectedTblRow">
-                            <td>Beef Wellington with Roast Potatos</td>
-                            <td>(<span>1</span>)</td>
-                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
-                        </tr>
-                        <tr class="lc-selectedTblRow">
-                            <td>Crispy Chili Turkey Noodles</td>
-                            <td>(<span>1</span>)</td>
-                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
-                        </tr>
-                        <tr class="lc-selectedTblRow">
-                            <td>Crispy Chili Turkey Noodles</td>
-                            <td>(<span>1</span>)</td>
-                            <td><i class="fa-solid fa-xmark selected-fa-xmark greyBtnHvr"></i></td>
+                            <td id="lc-placeholder"><em>No meals added...</em></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </table>
                     <!-- Temp -->
@@ -95,319 +66,119 @@
         <div id="lc-recipeDisp">
             <div id="lc-recipeBox">
                 <!-- dynamic -->
-                <!-- TEMP -->
-               
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="lc-recipeCard" id="lc-card1">
-                    <div class="lc-recipePhoto" id="lc-card1img">
-                        <div class="lc-favBg"></div>
-                        <i class="fa-regular fa-heart cardFav"></i>
-                    </div>
-                    <div class="lc-recipeInfo" id="lc-card1info">
-                        <div class="lc-recipeText" id="lc-card1text">
-                            <p class="lc-cardRecipeTtl">Crispy Chilli Turkey Noodles</p>
-                            <div class="lc-recipePopupBtns" id="lc-card1btns">
-                                <p class="greyBtnHvr">Recipe</p><p>|</p><p class="greyBtnHvr">Compare</p>
-                            </div>
-                        </div>
-                        <div class="lc-addRemBtns" id="lc-card1addRemBtns">
-                            <i class="fa-solid fa-minus greyBtnHvr" id="lc-card1remove"></i>
-                            <i class="fa-solid fa-plus greyBtnHvr" id="lc-card1add"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- TEMP -->
             </div>
         </div>
-        <script src="js/recipes.js"></script>
+        <div id="lc-overlay" class="lc-hiddenOpacity lc-noDisplay">
+            <div id="lc-popupBox">
+                <i class="fa-solid fa-xmark popUp-fa-xmark greyBtnHvr" id="lc-closePopup"></i>
+                <div id="lc-compareBox">
+                    <!-- Temp -->
+                    <div id="lc-compare1" class="lc-compareSide">
+                        <div id="lc-compareSelect1" class="lc-compareSelect">
+                            <select>
+                                <option selected>Compare with</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                        <div id="lc-compareImg1" class="lc-compareImgPlaceHld">
+
+                        </div>
+                        <div id="lc-compareNutritionTbl1" class="lc-NutritionTbl">
+                            <h2>Compare With...</h2>
+                            <table>
+                                <tr>
+                                    <th>Per serving:</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td>Calories</td>
+                                    <td>0kcal</td>
+                                </tr>
+                                <tr>
+                                    <td>Fat</td>
+                                    <td>0g</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturates</td>
+                                    <td>0mg</td>
+                                </tr>
+                                <tr>
+                                    <td>Carbohydrates</td>
+                                    <td>0g</td>
+                                </tr>
+                                <tr>
+                                    <td>Sugars</td>
+                                    <td>0g</td>
+                                </tr>
+                                <tr>
+                                    <td>Fibre</td>
+                                    <td>0g</td>
+                                </tr>
+                                <tr>
+                                    <td>Protein</td>
+                                    <td>0g</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="lc-compare2" class="lc-compareSide">
+                        <div id="lc-compareSelect2" class="lc-compareSelect">
+                            <select>
+                                <option selected>Compare with</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                        <div id="lc-compareImg2" class="lc-compareImgPlaceHld">
+
+                        </div>
+                        <div id="lc-compareNutritionTbl2" class="lc-NutritionTbl">
+                            <h2>Compare With...</h2>
+                            <table>
+                                <tr>
+                                    <th>Per serving:</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td>Calories</td>
+                                    <td>0kcal</td>
+                                </tr>
+                                <tr>
+                                    <td>Fat</td>
+                                    <td>0g</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturates</td>
+                                    <td>0mg</td>
+                                </tr>
+                                <tr>
+                                    <td>Carbohydrates</td>
+                                    <td>0g</td>
+                                </tr>
+                                <tr>
+                                    <td>Sugars</td>
+                                    <td>0g</td>
+                                </tr>
+                                <tr>
+                                    <td>Fibre</td>
+                                    <td>0g</td>
+                                </tr>
+                                <tr>
+                                    <td>Protein</td>
+                                    <td>0g</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Temp -->
+                </div>
+                <!-- <div id="lc-listPopup">
+
+                </div> -->
+            </div>
+        </div>
+        <script src="/Users/henrycrompton-smith/Desktop/WebDev/Listify/js/recipes.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

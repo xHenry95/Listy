@@ -7,6 +7,8 @@
   --primary1: #f9522f;
   --text: #000000;
   --mainGrey: rgb(105, 105, 105);
+  --lightGrey: rgb(159, 159, 159);
+  --lightestGrey: rgb(213, 213, 213);
   --secondary: #57c59f;
   --mainTransition: 0.3s;
   --paraSpacing: 0.05rem;
@@ -157,8 +159,8 @@ p {
 }
 
 #lc-peopleSelect p {
-    font-size: 0.9rem;
-    font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 #lc-peopleSelect select {
@@ -167,6 +169,11 @@ p {
   font-size: 0.8rem;
   font-weight: 700;
   border: none;
+  border-bottom: 1px solid black;
+}
+
+#lc-peopleSelect select:hover {
+  cursor: pointer;
 }
 
 .lc-leftColCont {
@@ -263,20 +270,40 @@ p {
   overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
 
-  }
-  
-  @media (max-width: 768px) {
+a {
+  text-decoration: none;
+  color: var(--mainGrey);
+}
+
+a:hover {
+  color: black;
+}
+
+@media (min-width: 1920px) { 
     #lc-recipeBox {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
-  }
+}
   
-  @media (max-width: 640px) {
+@media (max-width: 1390px) {
     #lc-recipeBox {
-      grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-  }
+}
+
+@media (max-width: 1090px) {
+    #lc-recipeBox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 790px) { /* Turn into a mobile version */
+    #lc-recipeBox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 /* --- */
 
 .lc-recipeCard {
@@ -285,12 +312,6 @@ p {
   border-radius: 15px;
   margin-bottom: 25px;
 }
-
-/* dynamic */
-#lc-card1img {
-  background-image: url(/Users/henrycrompton-smith/Desktop/WebDev/Listify/img/CrispyChiliTurkeyNoodles.jpg);
-}
-/* dynamic */
 
 .lc-recipePhoto {
   width: 100%;
@@ -376,9 +397,135 @@ p {
   color: rgb(105, 105, 105);
   transition: var(--mainTransition);
 }
-
 /* --- */
 
+#lc-overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+}
+
+#lc-popupBox {
+  background-color: white;
+  position: fixed;
+  height: 80vh;
+  width: 60%;
+  top: 12%;
+  left: 32%;  
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+}
+
+.lc-noDisplay {
+  display: none;
+}
+
+.lc-hiddenOpacity {
+  opacity: 0;
+}
+
+#lc-popupBox > div {
+  width: 95%;
+  height: 95%;
+}
+
+#lc-closePopup {
+  font-size: 2rem;
+  color: var(--lightGrey);
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+
+#lc-closePopup:hover {
+  color: black;
+}
+
+@media (max-width: 800px) {
+    #lc-popupBox {
+      height: 95vh;
+      width: 95%;
+      top: 2.5%;
+      left: 2.5%;  
+    }
+}
 /* --- */
+
+#lc-compareBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.lc-compareSide {
+  width: 40%;
+}
+
+.lc-compareSelect select {
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.lc-compareImgPlaceHld {
+  width: 100%;
+  height: 162px;
+  background-color: var(--lightestGrey);
+  margin: 10px 0 10px 0;
+  border-radius: 10px;
+}
+
+.lc-NutritionTbl h2 {
+  font-weight: normal;
+}
+
+.lc-NutritionTbl table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lc-NutritionTbl th {
+  text-align: left;
+  font-size: 0.75rem;
+  color: var(--lightGrey);
+  font-weight: 600;
+  padding: 0 0 5px 0;
+}
+
+.lc-NutritionTbl td {
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid var(--lightestGrey);
+  font-size: 0.8rem;
+}
+
+.lc-NutritionTbl tr td:nth-child(2) {
+  text-align: right;
+}
+
+#lc-compareNutritionTbl2, #lc-compareSelect2 select {
+  color: var(--lightGrey);
+}
+
+
+/* --- */
+/* --- */
+/* --- */
+/* --- */
+/* --- */
+/* --- */
+
+@media (max-width: 800px) {
+    #lc-leftCol {
+        width: 100%;
+        height: 250px;
+        padding-left: 10px;
+      }
+}
 
 /* --------------------------------------- ####.html */
