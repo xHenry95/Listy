@@ -7,11 +7,12 @@
 
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script src="https://kit.fontawesome.com/d5d5f43f03.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://kit.fontawesome.com/d5d5f43f03.js" crossorigin="anonymous"></script> -->
     </head>
     <body>
         <div id="lc-leftCol">
             <div id="lc-leftGrp">
+                <p id="lc-mobExpandSelected"><u>expand</u></p>
                 <div id="lc-logoTtl">
                     <h1>LOGO</h1>
                 </div>
@@ -32,6 +33,7 @@
                 </div>
                 <div id="lc-selected" class="lc-leftColCont">
                     <h2>Meals added</h2>
+                    <p id="lc-totalAdded">: (0)</p>
                     <!-- dynamic -->
                     <!-- Temp -->
                     <table id="lc-selectedTable">
@@ -69,113 +71,117 @@
             </div>
         </div>
         <div id="lc-overlay" class="lc-hiddenOpacity lc-noDisplay">
-            <div id="lc-popupBox">
-                <i class="fa-solid fa-xmark popUp-fa-xmark greyBtnHvr" id="lc-closePopup"></i>
-                <div id="lc-compareBox">
-                    <!-- Temp -->
-                    <div id="lc-compare1" class="lc-compareSide">
-                        <div class="lc-compareSelect">
-                            <select class="compareSelect-js">
-                                <option selected>Compare with</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                            </select>
-                        </div>
-                        <div id="lc-compareImg1" class="lc-compareImgPlaceHld">
+            <div class="hideScrolWin">
 
-                        </div>
-                        <div id="lc-compareNutritionTbl1" class="lc-NutritionTbl">
-                            <h2 id="compareTtl1">Compare With...</h2>
-                            <table>
-                                <tr>
-                                    <th>Per serving:</th>
-                                    <th></th>
-                                </tr>
-                                <tr>
-                                    <td>Calories</td>
-                                    <td id="kcalValue1">0kcal</td>
-                                </tr>
-                                <tr>
-                                    <td>Fat</td>
-                                    <td id="fatValue1">0g</td>
-                                </tr>
-                                <tr>
-                                    <td>Saturates</td>
-                                    <td id="satValue1">0mg</td>
-                                </tr>
-                                <tr>
-                                    <td>Carbohydrates</td>
-                                    <td id="carbValue1">0g</td>
-                                </tr>
-                                <tr>
-                                    <td>Sugars</td>
-                                    <td id="sugValue1">0g</td>
-                                </tr>
-                                <tr>
-                                    <td>Fibre</td>
-                                    <td id="fibValue1">0g</td>
-                                </tr>
-                                <tr>
-                                    <td>Protein</td>
-                                    <td id="protValue1">0g</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <div id="lc-compare2" class="lc-compareSide">
-                        <div id="lc-compareSelect2" class="lc-compareSelect">
-                            <select class="compareSelect-js">
-                            </select>
-                        </div>
-                        <div id="lc-compareImg2" class="lc-compareImgPlaceHld">
+                <div id="lc-popupBox">
+                    <i class="fa-solid fa-xmark popUp-fa-xmark greyBtnHvr" id="lc-closePopup"></i>
+                    <div id="lc-compareBox">
+                        <!-- Temp -->
+                        <div id="lc-compare1" class="lc-compareSide">
+                            <div class="lc-compareSelect">
+                                <select class="compareSelect-js">
+                                    <option selected>Compare with</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                            </div>
+                            <div id="lc-compareImg1" class="lc-compareImgPlaceHld">
 
+                            </div>
+                            <div id="lc-compareNutritionTbl1" class="lc-NutritionTbl">
+                                <h2 id="compareTtl1">Compare With...</h2>
+                                <table>
+                                    <tr>
+                                        <th>Per serving:</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <td>Calories</td>
+                                        <td id="kcalValue1">0kcal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fat</td>
+                                        <td id="fatValue1">0g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saturates</td>
+                                        <td id="satValue1">0mg</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carbohydrates</td>
+                                        <td id="carbValue1">0g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sugars</td>
+                                        <td id="sugValue1">0g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fibre</td>
+                                        <td id="fibValue1">0g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Protein</td>
+                                        <td id="protValue1">0g</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
-                        <div id="lc-compareNutritionTbl2" class="lc-NutritionTbl">
-                            <h2 id="compareTtl2">Compare With...</h2>
-                            <table>
-                                <tr>
-                                    <th>Per serving:</th>
-                                    <th></th>
-                                </tr>
-                                <tr>
-                                    <td>Calories</td>
-                                    <td id="kcalValue2">0kcal</td>
-                                </tr>
-                                <tr>
-                                    <td>Fat</td>
-                                    <td id="fatValue2">0g</td>
-                                </tr>
-                                <tr>
-                                    <td>Saturates</td>
-                                    <td id="satValue2">0mg</td>
-                                </tr>
-                                <tr>
-                                    <td>Carbohydrates</td>
-                                    <td id="carbValue2">0g</td>
-                                </tr>
-                                <tr>
-                                    <td>Sugars</td>
-                                    <td id="sugValue2">0g</td>
-                                </tr>
-                                <tr>
-                                    <td>Fibre</td>
-                                    <td id="fibValue2">0g</td>
-                                </tr>
-                                <tr>
-                                    <td>Protein</td>
-                                    <td id="protValue2">0g</td>
-                                </tr>
-                            </table>
+                        <div id="lc-compare2" class="lc-compareSide">
+                            <div id="lc-compareSelect2" class="lc-compareSelect">
+                                <select class="compareSelect-js">
+                                </select>
+                            </div>
+                            <div id="lc-compareImg2" class="lc-compareImgPlaceHld">
+
+                            </div>
+                            <div id="lc-compareNutritionTbl2" class="lc-NutritionTbl">
+                                <h2 id="compareTtl2">Compare With...</h2>
+                                <table>
+                                    <tr>
+                                        <th>Per serving:</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <td>Calories</td>
+                                        <td id="kcalValue2">0kcal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fat</td>
+                                        <td id="fatValue2">0g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Saturates</td>
+                                        <td id="satValue2">0mg</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carbohydrates</td>
+                                        <td id="carbValue2">0g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sugars</td>
+                                        <td id="sugValue2">0g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fibre</td>
+                                        <td id="fibValue2">0g</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Protein</td>
+                                        <td id="protValue2">0g</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
+                        <!-- Temp -->
                     </div>
-                    <!-- Temp -->
+                    <!-- <div id="lc-listPopup">
+
+                    </div> -->
                 </div>
-                <!-- <div id="lc-listPopup">
 
-                </div> -->
             </div>
         </div>
-        <script src="/Users/henrycrompton-smith/Desktop/WebDev/Listify/js/recipes.js"></script>
+        <script src="js/recipes.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
