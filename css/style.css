@@ -174,8 +174,11 @@ select:focus {
   display: none;
 }
 
-#lc-mobExpandSelected {
-  display: none;
+#lc-chevronExp {
+  position: fixed;
+  bottom: 5000px;
+  width: 10px;
+  height: 10px;
 }
 
 #lc-peopleSelect p {
@@ -416,6 +419,7 @@ a:hover {
 
 .lc-addRemBtns {
   width: 20%;
+  height: 80%;
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
@@ -481,8 +485,8 @@ a:hover {
 .lc-popUpXBox {
   position: absolute;
   overflow: hidden;
-  top: 15px;
-  right: 5px;
+  top: 5px;
+  right: 7px;
   width: 40px;
   height: 40px;
 }
@@ -655,18 +659,17 @@ a:hover {
       font-weight: bold;
     }
     #lc-mobExpandSelected {
-      display: inline !important;
-      position: absolute;
-      margin: 0 0 5px 0;
-      bottom: 0;
-      font-size: 0.7rem;
-      right: 5px;
+      fill: var(--mainGrey);
     }
-    .fa-chevron-down, .fa-chevron-up {
-      position: absolute;
-      right: 10px;
-      bottom: 5px;
-      font-size: 1.5rem !important;
+    #lc-chevronExp {
+      position: absolute !important;
+      height: 25px !important;
+      width: 25px !important;
+      bottom: 10px !important;
+      right: 34px !important;
+    }
+    .lc-rotateExp {
+      transform: rotate(180deg);
     }
     #lc-selected > h2 {
       display: inline;

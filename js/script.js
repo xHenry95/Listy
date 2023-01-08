@@ -1,6 +1,7 @@
 // SVG Icons
 const heart = `<path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/>`;
-const cevronDown = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>`;
+const cevronDownPath = `<path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>`;
+const chevronUpPath = `<path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>`;
 const minus = `<path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/>`;
 const plus = `<path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>`;
 const xMark = `<path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>`;
@@ -46,7 +47,7 @@ function showRecipes() {
             <div class="lc-recipeCard" id="lc-card${i}">
                 <div class="lc-recipePhoto" id="lc-card${i}img" style="background-image: url(${imgUrl});">
                     <div class="lc-favBg"></div>
-                    <svg class="fa-regular fa-heart cardFav" tag="Favourite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" tag="Favourite">${heart}</svg>
+                    <svg class="fa-regular fa-heart cardFav" tag="Favourite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1400" tag="Favourite">${heart}</svg>
                 </div>
                 <div class="lc-recipeInfo" id="lc-card${i}info">
                     <div class="lc-recipeText" id="lc-card${i}text">
@@ -144,7 +145,6 @@ function addEventListeners() {
 addEventListeners();
 
 // Expand left col mobile 
-
 function leftColExp() {
     const expandBtn = document.getElementById('lc-mobExpandSelected');
     const leftCol = document.getElementById('lc-leftCol');
@@ -156,7 +156,7 @@ function leftColExp() {
         leftCol.classList.add('lc-leftColExp');
         navBox.classList.add('lc-leftColExpNav');
         recDispBox.classList.add('lc-leftColExpRecDisp');
-        expMinBox.innerHTML = '<u>minimize</u>'
+        expMinBox.innerHTML = chevronUpPath
         minimizeLeftCol();
     })
 }
@@ -167,13 +167,13 @@ function minimizeLeftCol() {
     const leftCol = document.getElementById('lc-leftCol');
     const navBox = document.getElementById('lc-nav');
     const recDispBox = document.getElementById('lc-recipeDisp');
-    const expMinBox = document.getElementById('lc-mobExpandSelected');
+    const expMinSVG = document.getElementById('lc-mobExpandSelected');
 
     minimizeBtn.addEventListener('click', () => {
         leftCol.classList.remove('lc-leftColExp');
         navBox.classList.remove('lc-leftColExpNav');
         recDispBox.classList.remove('lc-leftColExpRecDisp');
-        expMinBox.innerHTML = '<u>expand</u>'
+        expMinSVG.innerHTML = cevronDownPath
         leftColExp();
     })
 }
@@ -193,8 +193,6 @@ function openCompareBox() {
 
             // Parse recipeId from compare button through for compareBox1 load
             recipeCompareId = button.dataset.recipeid;
-            // recipeCompareId = recipes.find(recipe => recipe.recipeId === parseInt(recipeDOMId));
-
             let compareBoxLeftId = parseInt(recipeCompareId);
             let leftBoxRecipe = recipes.find(recipe => recipe.recipeId === parseInt(compareBoxLeftId));
             console.log(parseInt(leftBoxRecipe));
@@ -258,6 +256,8 @@ function fillCompareInfo(leftBoxRecipe) {
     let rightBoxRecipe = recipes.find(recipe => recipe.recipeId === parseInt(compareBoxRightId));
     console.log(leftBoxRecipe);
     console.log(rightBoxRecipe);
+
+    // This can all be looped, including the if statements lower down
     const compareImg1Box = document.getElementById('lc-compareImg1');
     const compareTtl1 = document.getElementById('compareTtl1');
     const kcalValTd1 = document.getElementById('kcalValue1');
@@ -353,6 +353,9 @@ let closePopUp = () => {
 
 closePopUp();
 
+// Reusable function to fade an element into the DOM:
+// first by removing the display: none property
+// second creating a loop to add 0.01 to the opacity 100 times.
 function fadeOpacityIn(element) {
     let delay = 5; // delay between each iteration of the loop, in milliseconds
     let increment = 0.01; // amount to increase the element's opacity each iteration
@@ -365,6 +368,7 @@ function fadeOpacityIn(element) {
     }
 }
 
+// Same as the function above but reverse, to remove an element from the DOM and finish by setting the display to none
 function fadeOpacityOut(element) {
     let delay = 5; // delay between each iteration of the loop, in milliseconds
     let increment = 0.01; // amount to increase the element's opacity each iteration
@@ -398,7 +402,7 @@ function showSelected() {
         </tr>`
     ];
 
-    // Construct meal list to display options
+    // Construct meal list then display selections
     for (const [i, recipe] of globalShoppingList.entries()) {
         const mealOption = recipe.meal;
         const selectedNum = recipe.selectedNo;
@@ -414,13 +418,12 @@ function showSelected() {
     }
     listToShow.push(`</table>`)
     showSelectionBox.innerHTML = listToShow.join('');  
-    deleteRecipeBtns()
+    deleteRecipeBtns();
 }
 
 /**
- * Delete recipe from list
+ * Delete recipe from list 
  */
-
 function deleteRecipeBtns() {
     const deleteRecipeBtns = document.getElementsByClassName('selected-fa-xmark');
     for (let i = 0; i < deleteRecipeBtns.length; i++) {
@@ -459,7 +462,6 @@ function deleteRecipeBtns() {
             }
             
         console.log(globalShoppingList);
-
         })
     }
 }
@@ -468,6 +470,25 @@ function deleteRecipeBtns() {
  * Add function to 'Clear list' button to empty the compiled list if selected
  * 1. Ensure that the 'Meals added' list on the left is cleared too
  */
+const clearList = () => {
+    const clearListBtn = document.getElementById('lc-clearLstBtn');
+    // let selectedRecipes = [];
+    // let globalShoppingList;
+
+    clearListBtn.addEventListener('click', () => {
+        for (recipe of recipes) {
+            recipe.selected = false;
+            recipe.selectedNo = 0;
+        }
+
+        selectedRecipes = recipes.filter(recipe => recipe.selected === true);
+        const shoppingList = selectedRecipes;
+        globalShoppingList = shoppingList;
+
+        showSelected();
+    })
+}
+clearList();
 
 /** generateList()
  *  1. Loop through the selectedList array to calculate the final output of ingredients needed
