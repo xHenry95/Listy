@@ -134,6 +134,8 @@ select:focus {
   border-radius: 20px;
 }
 
+
+
 /* --------------------------------------- listCreator.html */
 
 /* --- */
@@ -235,7 +237,12 @@ select:focus {
 .selected-fa-xmark {
   transition: var(--mainTransition);
   font-size: 0.9rem;
-  color: var(--mainGrey);
+  fill: var(--mainGrey);
+  margin-top: 6px;
+}
+
+.selected-fa-xmark:hover {
+  fill: black;
 }
 
 #lc-finishBtns {
@@ -287,6 +294,10 @@ select:focus {
   overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+#lc-recipeBox:last-child {
+  padding-bottom: 50px;
 }
 
 a {
@@ -351,6 +362,7 @@ a:hover {
 .cardFav {
   fill: white;
   font-size: 0.2rem;
+  height: 50px;
   position: relative;
   margin-left: 273px;
   transform: translate(0, -41px);
@@ -411,10 +423,14 @@ a:hover {
 }
 
 .fa-minus, .fa-plus {
-  font-size: 1.1rem;
-  color: rgb(105, 105, 105);
+  fill: rgb(105, 105, 105);
   transition: var(--mainTransition);
 }
+
+.fa-minus:hover, .fa-plus:hover {
+  fill: black;
+}
+
 /* --- */
 
 #lc-overlay {
@@ -462,16 +478,26 @@ a:hover {
   height: 95%;
 }
 
-#lc-closePopup {
-  font-size: 2rem;
-  color: var(--lightGrey);
+.lc-popUpXBox {
   position: absolute;
-  right: 30px;
-  top: 20px;
+  overflow: hidden;
+  top: 15px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+#lc-closePopup {
+  height: 75px;
+  width: 75px;
+  fill: var(--lightGrey);
+  position: absolute;
+  right: -44px;
+  bottom: -39px;
 }
 
 #lc-closePopup:hover {
-  color: black;
+  fill: black;
 }
 
 @media (max-width: 800px) {
