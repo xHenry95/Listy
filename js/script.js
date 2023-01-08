@@ -57,8 +57,8 @@ function showRecipes() {
                         </div>
                     </div>
                     <div class="lc-addRemBtns" id="lc-card${i}addRemBtns">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="fa-solid fa-minus greyBtnHvr" id="lc-card${i}remove">${minus}</svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="fa-solid fa-plus greyBtnHvr" id="lc-card${i}add">${plus}</svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="fa-solid fa-minus greyBtnHvr selTotMinus-js" id="lc-card${i}remove">${minus}</svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="fa-solid fa-plus greyBtnHvr selTotAdd-js" id="lc-card${i}add">${plus}</svg>
                     </div>
                 </div>
             </div>
@@ -76,12 +76,10 @@ showRecipes();
 let selectedRecipes = [];
 let globalShoppingList;
 
-function addEventListeners() {
+function eventListRecipeCards() {
     for (const [i, recipe] of recipes.entries()) {
-        // Add event listeners
         //Add button
         const addBtn = document.getElementById(`lc-card${i}add`);
-
         addBtn.addEventListener('click', function() {
             let numberOfPeople = retreivePeopleNum();
             recipe.selected = true;
@@ -103,8 +101,6 @@ function addEventListeners() {
             });
             
             globalShoppingList = shoppingList;
-            console.log(shoppingList);
-
             showSelected();
         }); 
 
@@ -135,14 +131,46 @@ function addEventListeners() {
                 }
             });
             globalShoppingList = shoppingList;
-            console.log(shoppingList);
 
             showSelected();
         }); 
     }
 }
+eventListRecipeCards();
 
-addEventListeners();
+// Listen for selections to update total number of selected recipes
+let totalAdded = 0;
+function totalAddedMob() {
+    const totalBoxMob = document.getElementById('lc-totalAdded');
+
+    document.querySelectorAll('.selTotAdd-js').forEach(button => {
+        button.addEventListener('click', () => { 
+            totalAdded += 1;
+
+            totalBoxMob.innerHTML = `: (${totalAdded})`;
+            console.log(totalAdded);
+        })
+    })
+}
+totalAddedMob();
+
+// Listen for selections to update total number of selected recipes
+function totalRemovedMob() {
+    const totalBoxMob = document.getElementById('lc-totalAdded');
+
+    document.querySelectorAll('.selTotMinus-js').forEach(button => {
+        button.addEventListener('click', () => { 
+            totalAdded -= 1;
+
+            if (totalAdded < 1) {
+                totalAdded = 0;
+            }
+
+            totalBoxMob.innerHTML = `: (${totalAdded})`;
+        })
+    })
+}
+totalRemovedMob();
 
 // Expand left col mobile 
 function leftColExp() {
@@ -391,10 +419,9 @@ function fadeOpacityOut(element) {
  */
 
 function showSelected() {
-    const showSelectionBox = document.getElementById('lc-selected');
+    const showSelectionBox = document.getElementById('lc-selectedDynamic');
     let listToShow = [`
         <table id="lc-selectedTable">
-        <h2>Meals added</h2>
         <tr>
             <th id="lc-selectedMealCol"></th>
             <th></th>
@@ -486,6 +513,10 @@ const clearList = () => {
         globalShoppingList = shoppingList;
 
         showSelected();
+
+        const totalBoxMob = document.getElementById('lc-totalAdded');
+        totalAdded = 0;
+        totalBoxMob.innerHTML = `: (${totalAdded})`;
     })
 }
 clearList();
