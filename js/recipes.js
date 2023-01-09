@@ -103,7 +103,7 @@ const recipes = [
         ingredients: [
             {ingredient: 'Turkey mince', measure: 400, unit: 'g', category: 'meat & poultry'},
             {ingredient: 'Vegitable oil', measure: 2, unit: 'tbsp', category: 'sauces & oils'},
-            {ingredient: 'Large onion', measure: 1, unit: 'onion', category: 'vegitables'},
+            {ingredient: 'Brown onion', measure: 1, unit: 'onion', category: 'vegitables'},
             {ingredient: 'Large carrot', measure: 1, unit: 'carrot', category: 'vegitables'},
             {ingredient: 'Celery', measure: 3, unit: 'sticks', category: 'vegitables'},
             {ingredient: 'Sugar', measure: 1, unit: 'pinch', category: 'carbohydrates'},
@@ -172,7 +172,7 @@ const recipes = [
             {ingredient: 'Garlic', measure: 3, unit: 'cloves', category: 'spices'},
             {ingredient: 'Lemon juice', measure: 1, unit: 'tbsp', category: 'sauces & oils'},
             {ingredient: 'Sweet potatoes', measure: 285, unit: 'grams', category: 'vegitables'},
-            {ingredient: 'Broccoli florets', measure: 420, unit: 'grams', category: 'vegitables'},
+            {ingredient: 'Broccoli', measure: 420, unit: 'grams', category: 'vegitables'},
             {ingredient: 'Olive oil', measure: 2, unit: 'tbsp', category: 'sauces & oils'},
             {ingredient: 'Salt', measure: 0, unit: '(to taste)', category: 'seasoning'},
             {ingredient: 'Pepper', measure: 0, unit: '(to taste)', category: 'vegitables'}
@@ -225,69 +225,78 @@ const recipes = [
         selectedNo: 0,
         current: false,
         recipeId: 7
+    },
+    {
+        meal: 'Chicken Stir-fry',
+        ingredients: [
+            {ingredient: 'Chicken broth', measure: 60, unit: 'ml', category: 'broths & stocks'},
+            {ingredient: 'Tamari soy sauce (or coconut aminos)', measure: 60, unit: 'ml', category: 'sauces & oils'},
+            {ingredient: 'Honey', measure: 1, unit: 'tbsp', category: 'carbohydrates'},
+            {ingredient: 'Sesame oil', measure: 1, unit: 'tsp', category: 'sauces & oils'},
+            {ingredient: 'Rice vinegar (or apple cider vinegar)', measure: 1, unit: 'tsp', category: 'sauces & oils'},
+            {ingredient: 'Arrowroot powder', measure: 1, unit: 'tbsp', category: 'baking'},
+            {ingredient: 'Avocado oil', measure: 2, unit: 'tbsp', category: 'sauces & oils'},
+            {ingredient: 'Chicken breast', measure: 455, unit: 'g', category: 'meat & poultry'},
+            {ingredient: 'Red bell pepper', measure: 1, unit: 'pepper', category: 'vegitables'},
+            {ingredient: 'Carrot', measure: 1, unit: 'carrot', category: 'vegitables'},
+            {ingredient: 'Broccoli', measure: 145, unit: 'g', category: 'vegitables'},
+            {ingredient: 'Brown onion', measure: 1, unit: 'onion', category: 'vegitables'},
+            {ingredient: 'Fresh ginger', measure: 1, unit: 'tbsp', category: 'spices'},
+            {ingredient: 'Garlic', measure: 4, unit: 'cloves', category: 'spices'},
+            {ingredient: 'Sesame seeds', measure: 1, unit: 'tbsp', category: 'nuts & seeds'},
+            {ingredient: 'Green onion', measure: 1, unit: 'onion', category: 'vegitables'},
+            {ingredient: 'Salt', measure: 0, unit: '(to taste)', category: 'seasoning'},
+            {ingredient: 'Pepper', measure: 0, unit: '(to taste)', category: 'seasoning'}
+        ],
+        servings: 4,
+        kcal: 295,
+        fat: 12,
+        saturates: 2,
+        carbs: 18,
+        sugars: 9,
+        fibre: 3,
+        protein: 28,
+        description: 'Chicken stir-fry is a speedy dinner that\’s jam-packed with flavor! Just grab a large pan and watch how juicy chicken, loads of veggies, and a savory-sweet sauce quickly come together in this colorful, healthy meal.',
+        source: 'https://downshiftology.com/recipes/chicken-stir-fry/',
+        imgPath: 'img/ChickenStirfry.png',
+        favorite: false,
+        selected: false,
+        selectedNo: 0,
+        current: false,
+        recipeId: 8
+    },
+    {
+        meal: 'Easy Tortilla Pizza',
+        ingredients: [
+            {ingredient: 'Soft flour tortilla', measure: 1, unit: 'tortilla', category: 'carbohydrates'},
+            {ingredient: 'Olive oil', measure: 1, unit: 'tsp', category: 'sauces & oils'},
+            {ingredient: 'Garlic powder', measure: 1, unit: 'pinch', category: 'spices'},
+            {ingredient: 'Tomato sauce', measure: 3, unit: 'tbsp', category: 'sauces & oils'},
+            {ingredient: 'Chicken breast', measure: 1, unit: 'breast', category: 'meat & poultry'},
+            {ingredient: 'Bell pepper', measure: 0.5, unit: 'pepper', category: 'vegitables'},
+            {ingredient: 'Green onion', measure: 2, unit: 'onion', category: 'vegitables'},
+            {ingredient: 'Shredded mozzarella cheese', measure: 75, unit: 'grams', category: 'dairy'},
+            {ingredient: 'Dried oregano', measure: 1, unit: 'pinch', category: 'herbs'},
+            {ingredient: 'Salt', measure: 0, unit: '(to taste)', category: 'seasoning'},
+            {ingredient: 'Pepper', measure: 0, unit: '(to taste)', category: 'seasoning'}
+        ],
+        servings: 1,
+        kcal: 833,
+        fat: 43,
+        saturates: 13,
+        carbs: 37,
+        sugars: 5,
+        fibre: 5,
+        protein: 71,
+        description: 'This tortilla pizza is extremely easy to make. It is light enough to be a snack, serves well as an appetizer, or is so good that it can be devoured alone!',
+        source: 'https://www.allrecipes.com/recipe/258013/easy-tortilla-pizza/',
+        imgPath: 'img/EasyTortillaPizza.png',
+        favorite: false,
+        selected: false,
+        selectedNo: 0,
+        current: false,
+        recipeId: 9
     }
-    // {
-    //     meal: '',
-    //     ingredients: [
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''}
-    //     ],
-    //     servings: ,
-    //     kcal: ,
-    //     fat: ,
-    //     saturates: ,
-    //     carbs: ,
-    //     sugars: ,
-    //     fibre: ,
-    //     protein: ,
-    //     description: '',
-    //     source: '',
-    //     imgPath: '',
-    //     favorite: false,
-    //     selected: false,
-    //     selectedNo: 0,
-    //     current: false,
-    //     recipeId: 8
-    // },
-    // {
-    //     meal: '',
-    //     ingredients: [
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''}
-    //     ],
-    //     servings: ,
-    //     kcal: ,
-    //     fat: ,
-    //     saturates: ,
-    //     carbs: ,
-    //     sugars: ,
-    //     fibre: ,
-    //     protein: ,
-    //     description: '',
-    //     source: '',
-    //     imgPath: '',
-    //     favorite: false,
-    //     selected: false,
-    //     selectedNo: 0,
-    //     current: false,
-    //     recipeId: 9
-    // },
     // {
     //     meal: '',
     //     ingredients: [
@@ -348,7 +357,7 @@ const recipes = [
         selected: false,
         selectedNo: 0,
         current: false,
-        recipeId: 
+        recipeId: 11
     }*/
     /* {
         meal: '',
@@ -379,7 +388,7 @@ const recipes = [
         selected: false,
         selectedNo: 0,
         current: false,
-        recipeId: 
+        recipeId: 12
     }*/
     /* {
         meal: '',

@@ -159,20 +159,33 @@ totalAddedMob();
 // Listen for selections to update total number of selected recipes
 function totalRemovedMob() {
     const totalBoxMob = document.getElementById('lc-totalAdded');
-
     document.querySelectorAll('.selTotMinus-js').forEach(button => {
         button.addEventListener('click', () => { 
             totalAdded -= 1;
-
             if (totalAdded < 1) {
                 totalAdded = 0;
             }
-
             totalBoxMob.innerHTML = `: (${totalAdded})`;
         })
     })
 }
 totalRemovedMob();
+
+// Add event listener to recalculate the totalAdded when a recipe and all it's selections are removed
+function deleteFullRecipe() {
+    document.querySelectorAll('.fa-xmark').forEach(button => {
+        button.addEventListener('click', () => { 
+            const totalBoxMob = document.getElementById('lc-totalAdded');
+            totalAdded = 0;
+            recipes.forEach((recipe) => {
+                totalAdded += recipe.selectedNo;
+            })
+            console.log(totalAdded);
+              
+            totalBoxMob.innerHTML = `: (${totalAdded})`;
+        })
+    })
+}
 
 // Expand left col mobile 
 function leftColExp() {
@@ -448,6 +461,7 @@ function showSelected() {
     listToShow.push(`</table>`)
     showSelectionBox.innerHTML = listToShow.join('');  
     deleteRecipeBtns();
+    deleteFullRecipe()
 }
 
 /**
