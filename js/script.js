@@ -47,13 +47,15 @@ function showRecipes() {
             <div class="lc-recipeCard" id="lc-card${i}">
                 <div class="lc-recipePhoto" id="lc-card${i}img" style="background-image: url(${imgUrl});">
                     <div class="lc-favBg"></div>
-                    <svg class="fa-regular fa-heart cardFav" tag="Favourite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1400" tag="Favourite">${heart}</svg>
+                    <div class="lc-favHrtBox">
+                        <svg class="fa-regular fa-heart cardFav" tag="Favourite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" tag="Favourite">${heart}</svg>
+                    </div>
                 </div>
                 <div class="lc-recipeInfo" id="lc-card${i}info">
                     <div class="lc-recipeText" id="lc-card${i}text">
                         <p class="lc-cardRecipeTtl">${mealOption}</p>
                         <div class="lc-recipePopupBtns" id="lc-card${i}btns">
-                            <p class="greyBtnHvr"><a href="${recipeLink}" target="_blank">Recipe</a></p><p>|</p><p class="greyBtnHvr compareBtn-js" id="lc-compareBtn${i}" data-recipeid="${recipeId}">Compare</p>
+                            <p class="greyBtnHvr recipeInfoBtn"><a href="${recipeLink}" target="_blank">Recipe</a></p><p class="recipeInfoBtn">|</p><p class="greyBtnHvr recipeInfoBtn compareBtn-js" id="lc-compareBtn${i}" data-recipeid="${recipeId}">Compare</p>
                         </div>
                     </div>
                     <div class="lc-addRemBtns" id="lc-card${i}addRemBtns">
@@ -424,7 +426,7 @@ function showSelected() {
         <table id="lc-selectedTable">
         <tr>
             <th id="lc-selectedMealCol"></th>
-            <th></th>
+            <th class="middleChild"></th>
             <th></th>
         </tr>`
     ];

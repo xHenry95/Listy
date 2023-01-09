@@ -165,7 +165,7 @@ const recipes = [
         recipeId: 5
     },
     {
-        meal: 'Sheet Pan Roasted Chicken, Sweet Potatoes, & Broccoli',
+        meal: 'Sheet Pan Roasted Chicken, Sweet Potatoes & Broccoli',
         ingredients: [
             {ingredient: 'Chicken breasts', measure: 4, unit: 'breasts', category: 'meat & poultry'},
             {ingredient: 'Cajun seasoning', measure: 2, unit: 'tbsp', category: 'spices'},
@@ -185,7 +185,7 @@ const recipes = [
         sugars: 8,
         fibre: 8,
         protein: 53,
-        description: 'Healthy one-pan chicken, sweet potatoes, and broccoli oven-roasted to perfection! This quick one-pan dish is packed full of flavor and is GREAT for meal prepping too!',
+        description: 'Healthy one-pan chicken, sweet potatoes and broccoli oven-roasted to perfection! This quick one-pan dish is packed full of flavor and is GREAT for meal prepping too!',
         source: 'https://gimmedelicious.com/chicken-broccoli-sweet-potatoes-meal-prep/',
         imgPath: 'img/SheetPanRoastedChickenSweetPotatoesBroccoli.png',
         favorite: false,
