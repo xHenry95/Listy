@@ -590,6 +590,7 @@ a:hover {
     }
     body > div {
       width: 89% !important;
+      border: 1px solid black;
     }
     .primaryColBtns {
       border-radius: 25px 25px 25px 25px;
@@ -601,9 +602,10 @@ a:hover {
     }
     /* ----- */
     #lc-leftCol {
-      height: 15%;
+      height: 16%;
       position: static;
       padding-left: 0;
+      padding-top: 20px;
       transition: var(--mainTransition);
     }
     .lc-leftColExp {
@@ -624,17 +626,16 @@ a:hover {
     #lc-nav {
       position: static;
       left: 0px !important;
-      width: 89% !important;
-      height: 7%;
+      width: 95% !important;
+      height: 5%;
       transition: var(--mainTransition);
     }
     #lc-recipeDisp {
-      height: 65%;
-      width: 89% !important;
+      height: 70%;
+      width: 95% !important;
       position: static;
       align-items: center;
       justify-content: center;
-      margin-bottom: 100px;
       transition: var(--mainTransition);
     }
 
@@ -666,8 +667,8 @@ a:hover {
       position: absolute !important;
       height: 25px !important;
       width: 25px !important;
-      bottom: 10px !important;
-      right: 34px !important;
+      bottom: 25px !important;
+      right: 5px !important;
     }
     .lc-rotateExp {
       transform: rotate(180deg);
@@ -720,6 +721,7 @@ a:hover {
     }
     .lc-recipeCard {
       min-height: 250px;
+      width: 100%;
     }
     .lc-recipePhoto {
 
@@ -745,7 +747,20 @@ a:hover {
     }
 }
 /* --- */
-
+@media only screen and (max-height: 667px) {
+  #lc-leftCol {
+    height: 17%;
+  }
+  #lc-chevronExp {
+    bottom: 0px;
+    right: 5px;
+  }
+}
+@media only screen and (max-height: 900) {
+  #lc-leftCol {
+    height: 12% !important;
+  }
+}
 /* --- */
 /* --- */
 /* --- */
