@@ -1,5 +1,6 @@
 // SVG Icons
-const heart = `<path d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/>`;
+const heart = `<path class="hrtReg" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/>`;
+const heartSolid = `<path class="hrtSolid" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>`
 const cevronDownPath = `<path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>`;
 const chevronUpPath = `<path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>`;
 const minus = `<path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/>`;
@@ -7,6 +8,13 @@ const plus = `<path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 
 const xMark = `<path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>`;
 const xSolid = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>`;
 
+let selectedRecipes = [];
+let globalShoppingList;
+let totalAdded = 0;
+let recipeCompareId;
+let compareBoxLeftId = parseInt(recipeCompareId);
+let compareBoxRightId;
+let leftRecipeChange = false
 
 /** retreivePeopleNum()
  * Retreive the number of people selected by the user from lc-noOfPeople
@@ -21,8 +29,6 @@ function retreivePeopleNum() {
     })
     return parseInt(peopleNum);
 }
-
-retreivePeopleNum();
 
 /** showRecipes()
  * Display recipes in recDisp box with eventListeners on
@@ -47,9 +53,10 @@ function showRecipes() {
             <div class="lc-recipeCard" id="lc-card${i}">
                 <div class="lc-recipePhoto" id="lc-card${i}img" style="background-image: url(${imgUrl});">
                     <div class="lc-favBg"></div>
-                    <div class="lc-favHrtBox">
-                        <svg class="fa-regular fa-heart cardFav" tag="Favourite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" tag="Favourite">${heart}</svg>
-                    </div>
+                    
+                    <input type="checkbox" class="favCheckbox" data-recipeid="${recipeId}">
+                    <svg class="fa-regular fa-heart cardFav" tag="Favourite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" data-favOn="false">${heart}</svg>
+                    
                 </div>
                 <div class="lc-recipeInfo" id="lc-card${i}info">
                     <div class="lc-recipeText" id="lc-card${i}text">
@@ -69,14 +76,9 @@ function showRecipes() {
     }
 }
 
-showRecipes();
-
 /**
  * Add event listeners
  */
-
-let selectedRecipes = [];
-let globalShoppingList;
 
 function eventListRecipeCards() {
     for (const [i, recipe] of recipes.entries()) {
@@ -138,10 +140,9 @@ function eventListRecipeCards() {
         }); 
     }
 }
-eventListRecipeCards();
 
 // Listen for selections to update total number of selected recipes
-let totalAdded = 0;
+
 function totalAddedMob() {
     const totalBoxMob = document.getElementById('lc-totalAdded');
 
@@ -154,7 +155,6 @@ function totalAddedMob() {
         })
     })
 }
-totalAddedMob();
 
 // Listen for selections to update total number of selected recipes
 function totalRemovedMob() {
@@ -169,7 +169,6 @@ function totalRemovedMob() {
         })
     })
 }
-totalRemovedMob();
 
 // Add event listener to recalculate the totalAdded when a recipe and all it's selections are removed
 function deleteFullRecipe() {
@@ -199,11 +198,10 @@ function leftColExp() {
         leftCol.classList.add('lc-leftColExp');
         navBox.classList.add('lc-leftColExpNav');
         recDispBox.classList.add('lc-leftColExpRecDisp');
-        expMinBox.innerHTML = chevronUpPath
+        expMinBox.innerHTML = chevronUpPath;
         minimizeLeftCol();
     })
 }
-leftColExp();
 
 function minimizeLeftCol() {
     const minimizeBtn = document.getElementById('lc-mobExpandSelected');
@@ -225,7 +223,6 @@ function minimizeLeftCol() {
  * Create the compare function
  *  1. Opens a dialogue with the selected recipe and allows the user to select another recipe to compare nutrition information
  */
-let recipeCompareId;
 function openCompareBox() {
     const overlayBox = document.getElementById('lc-overlay');
     document.querySelectorAll('.compareBtn-js').forEach(button => {
@@ -244,7 +241,6 @@ function openCompareBox() {
         });
     });
 }
-openCompareBox()
 
 // Fill compare selection boxes
 function fillCompareSelectOptions() {
@@ -268,9 +264,6 @@ function fillCompareSelectOptions() {
 }
 
 // Add event listeners to the Compare selection boxes
-let compareBoxLeftId = parseInt(recipeCompareId);
-let compareBoxRightId;
-let leftRecipeChange = false
 function GetRecipeCompareSelectId() {
     const compareSelectBoxes = document.getElementsByClassName('compareSelect-js');
     compareSelectBoxes[0].addEventListener('change', () => {
@@ -291,7 +284,6 @@ function GetRecipeCompareSelectId() {
         fillCompareInfo();
     })
 }
-GetRecipeCompareSelectId();
 
 // Fill compare info box 1 and 2 (left and right)
 function fillCompareInfo(leftBoxRecipe) {
@@ -394,8 +386,6 @@ let closePopUp = () => {
     })
 }
 
-closePopUp();
-
 // Reusable function to fade an element into the DOM:
 // first by removing the display: none property
 // second creating a loop to add 0.01 to the opacity 100 times.
@@ -432,7 +422,6 @@ function fadeOpacityOut(element) {
  *  1. Include a count of how many times the recipe has been selected
  *  2. Add event listeners on the (x) button to remove the recipe from the list if pressed
  */
-
 function showSelected() {
     const showSelectionBox = document.getElementById('lc-selectedDynamic');
     let listToShow = [`
@@ -462,6 +451,51 @@ function showSelected() {
     showSelectionBox.innerHTML = listToShow.join('');  
     deleteRecipeBtns();
     deleteFullRecipe()
+}
+
+// Add favourite on click of heart
+function addRemFavourite() {
+    const recipeBox = document.getElementById('lc-recipeBox');
+    
+    recipeBox.addEventListener('change', (e) => {
+        if ( e.target.className === 'favCheckbox') {
+            const recipeDOMId = e.target.dataset.recipeid;
+            const foundRecipe = recipes.find(recipe => recipe.recipeId === parseInt(recipeDOMId));
+            foundRecipe.favorite = e.target.checked;
+
+            if ( e.target.checked ) {
+                e.target.nextElementSibling.innerHTML = heartSolid;
+
+            } else {
+                e.target.nextElementSibling.innerHTML = heart;
+            }
+        }
+    })
+}
+
+function toggleNonFavourites() {
+    const favMealsBtn = document.getElementsByClassName('mainNavBtn')[1];
+    const allMealsBtn = document.getElementsByClassName('mainNavBtn')[0];
+    const recipeDisplay = document.getElementById('lc-recipeBox');
+    recipeList = recipeDisplay.children;
+
+    favMealsBtn.addEventListener('click', () => {
+        for ( recipeCard of recipeList ) {
+            const isChecked = recipeCard.firstElementChild.firstElementChild.nextElementSibling.checked;
+            if ( !isChecked ) {
+                recipeCard.style.display = 'none';
+            }
+        }
+        allMealsBtn.classList.remove('mainNavBtnActive');
+        favMealsBtn.classList.add('mainNavBtnActive');
+    })
+    allMealsBtn.addEventListener('click', () => {
+        for ( recipeCard of recipeList ) {
+            recipeCard.style.display = '';
+        }
+        allMealsBtn.classList.add('mainNavBtnActive');
+        favMealsBtn.classList.remove('mainNavBtnActive');
+    })
 }
 
 /**
@@ -514,10 +548,7 @@ function deleteRecipeBtns() {
  * 1. Ensure that the 'Meals added' list on the left is cleared too
  */
 const clearList = () => {
-    const clearListBtn = document.getElementById('lc-clearLstBtn');
-    // let selectedRecipes = [];
-    // let globalShoppingList;
-
+    const clearListBtn = document.getElementById('lc-clearLstBtn'); 
     clearListBtn.addEventListener('click', () => {
         for (recipe of recipes) {
             recipe.selected = false;
@@ -535,9 +566,21 @@ const clearList = () => {
         totalBoxMob.innerHTML = `: (${totalAdded})`;
     })
 }
-clearList();
 
 /** generateList()
  *  1. Loop through the selectedList array to calculate the final output of ingredients needed
  *  2. Display the final calculations in an output dialogue to the user
  */
+
+retreivePeopleNum();
+showRecipes();
+eventListRecipeCards();
+totalAddedMob();
+totalRemovedMob();
+leftColExp();
+openCompareBox()
+GetRecipeCompareSelectId();
+closePopUp();
+addRemFavourite()
+toggleNonFavourites()
+clearList();
