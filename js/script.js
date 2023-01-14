@@ -1,3 +1,10 @@
+// Sort recipes by title
+recipes.sort(function(a, b) {
+    if (a.meal.toLowerCase() < b.meal.toLowerCase()) return -1;
+    if (a.meal.toLowerCase() > b.meal.toLowerCase()) return 1;
+    return 0;
+});
+
 // SVG Icons
 const heart = `<path class="hrtReg" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/>`;
 const heartSolid = `<path class="hrtSolid" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>`
@@ -151,7 +158,6 @@ function totalAddedMob() {
             totalAdded += 1;
 
             totalBoxMob.innerHTML = `: (${totalAdded})`;
-            console.log(totalAdded);
         })
     })
 }
@@ -179,7 +185,6 @@ function deleteFullRecipe() {
             recipes.forEach((recipe) => {
                 totalAdded += recipe.selectedNo;
             })
-            console.log(totalAdded);
               
             totalBoxMob.innerHTML = `: (${totalAdded})`;
         })
@@ -224,7 +229,7 @@ function minimizeLeftCol() {
  *  1. Opens a dialogue with the selected recipe and allows the user to select another recipe to compare nutrition information
  */
 function openCompareBox() {
-    const overlayBox = document.getElementById('lc-overlay');
+    const overlayBox = document.getElementById('lc-overlay-comp');
     document.querySelectorAll('.compareBtn-js').forEach(button => {
         button.addEventListener('click', event => {
             // Fade in popup
@@ -235,7 +240,6 @@ function openCompareBox() {
             recipeCompareId = button.dataset.recipeid;
             let compareBoxLeftId = parseInt(recipeCompareId);
             let leftBoxRecipe = recipes.find(recipe => recipe.recipeId === parseInt(compareBoxLeftId));
-            console.log(parseInt(leftBoxRecipe));
             fillCompareSelectOptions()
             fillCompareInfo(leftBoxRecipe);
         });
@@ -268,13 +272,11 @@ function GetRecipeCompareSelectId() {
     const compareSelectBoxes = document.getElementsByClassName('compareSelect-js');
     compareSelectBoxes[0].addEventListener('change', () => {
         compareBoxLeftId = compareSelectBoxes[0].value;
-        console.log(compareBoxLeftId);
         leftRecipeChange = true;
         fillCompareInfo();
     })
     compareSelectBoxes[1].addEventListener('change', () => {
         compareBoxRightId = compareSelectBoxes[1].value;
-        console.log(compareBoxRightId);
         
         const nutDiv2 = document.querySelectorAll('#lc-compareNutritionTbl2, #lc-compareSelect2 select');
         nutDiv2.forEach(element => {
@@ -289,8 +291,6 @@ function GetRecipeCompareSelectId() {
 function fillCompareInfo(leftBoxRecipe) {
     let newLeftBoxRecipe = recipes.find(recipe => recipe.recipeId === parseInt(compareBoxLeftId));
     let rightBoxRecipe = recipes.find(recipe => recipe.recipeId === parseInt(compareBoxRightId));
-    console.log(leftBoxRecipe);
-    console.log(rightBoxRecipe);
 
     // This can all be looped, including the if statements lower down
     const compareImg1Box = document.getElementById('lc-compareImg1');
@@ -346,9 +346,10 @@ function fillCompareInfo(leftBoxRecipe) {
     }
 }
 
+// Close compare box
 let closePopUp = () => {
-    const closePopUpBtn = document.getElementById('lc-closePopup');
-    const overlayBox = document.getElementById('lc-overlay');
+    const closePopUpBtn = document.getElementsByClassName('lc-closePopup')[0];
+    const overlayBox = document.getElementById('lc-overlay-comp');
 
     closePopUpBtn.addEventListener('click', () => {
         fadeOpacityOut(overlayBox);
@@ -509,7 +510,6 @@ function deleteRecipeBtns() {
             const deleteBtn = document.getElementById(`lc-selectedTblRow${i}`);
             // Retreive recipe ID
             const recipeDOMId = deleteBtn.dataset.recipeid;
-            console.log(recipeDOMId);
 
             // Find the recipe with the corresponding recipeId
             const foundRecipe = recipes.find(recipe => recipe.recipeId === parseInt(recipeDOMId));
@@ -534,11 +534,9 @@ function deleteRecipeBtns() {
                         ingredients: updatedIngredients
                         }
                     });
-                    globalShoppingList = shoppingList;
-                    showSelected();
+                globalShoppingList = shoppingList;
+                showSelected();
             }
-            
-        console.log(globalShoppingList);
         })
     }
 }
@@ -571,16 +569,119 @@ const clearList = () => {
  *  1. Loop through the selectedList array to calculate the final output of ingredients needed
  *  2. Display the final calculations in an output dialogue to the user
  */
+function openListBox() {
+    const overlayBox = document.getElementById('lc-overlay-list');
+    const makeListBtn = document.getElementById('lc-createLstBtn');
+    
+    makeListBtn.addEventListener('click', () => {
+        // Fade in popup
+        overlayBox.classList.remove('lc-noDisplay')
+        fadeOpacityIn(overlayBox);
+
+        // Create HTML list 
+
+        // Outer container + title
+        const htmlList = document.createElement('div');
+        const listTitle = document.createElement('h2');
+        listTitle.textContent = 'Shopping List';
+        htmlList.appendChild(listTitle);
+
+        // Gnerate 1 list per meal with a title, add to food items
+        const foodItems = document.createElement('div');
+        for ( meal of globalShoppingList ) {
+            const mealTitle = document.createElement('h3');
+            mealTitle.textContent = meal.meal;
+            foodItems.appendChild(mealTitle);
+            const mealList = document.createElement('ul');
+            for ( item of meal.ingredients ) {
+                const foodItem = document.createElement('li');
+                let measure = item.measure;
+
+                if ( measure % 1 > 0 && 
+                     item.unit !== 'g' && 
+                     item.unit !== 'ml' ) {
+                    let whole = measure - (measure % 1);
+                    let remainder = decimalToFraction(measure % 1)
+                    if ( whole > 0 && remainder.top < 5 ) {
+                        measure = whole + remainder.display;
+                        console.log(remainder, item.ingredient);
+                    } else if ( remainder.top < 5 ) {
+                        measure = remainder.display;
+                        console.log(remainder, item.ingredient);
+                    }
+                }
+                if ( measure == 0 ) {
+                    measure = '';
+                }
+
+                foodItem.textContent = `${measure} ${item.unit} ${item.ingredient}`;
+                mealList.appendChild(foodItem);
+            }
+            foodItems.appendChild(mealList);
+        }
+
+        // Add generated lists to the html list
+        htmlList.appendChild(foodItems);
+
+        const ListBox = document.getElementById('lc-makeListBox');
+        ListBox.appendChild(htmlList);
+    })    
+}
+
+let closePopUpList = () => {
+    const closePopUpBtn = document.getElementsByClassName('lc-closePopup')[1];
+    const overlayBox = document.getElementById('lc-overlay-list');
+    closePopUpBtn.addEventListener('click', () => {
+        fadeOpacityOut(overlayBox);
+
+        const ListBox = document.getElementById('lc-makeListBox');
+        ListBox.innerHTML = '';
+    })
+}
+
+// Code below pulled from LeviathanTheGreat on GitHub
+function gcd(a, b) {
+	return (b) ? gcd(b, a % b) : a;
+}
+var decimalToFraction = function (_decimal) {
+    if (_decimal == parseInt(_decimal)) {
+        return {
+            top: parseInt(_decimal),
+            bottom: 1,
+            display: parseInt(_decimal) + '/' + 1
+        };
+    }
+    else {
+        var top = _decimal.toString().includes(".") ? _decimal.toString().replace(/\d+[.]/, '') : 0;
+        var bottom = Math.pow(10, top.toString().replace('-','').length);
+        if (_decimal >= 1) {
+            top = +top + (Math.floor(_decimal) * bottom);
+        }
+        else if (_decimal <= -1) {
+            top = +top + (Math.ceil(_decimal) * bottom);
+        }
+
+        var x = Math.abs(gcd(top, bottom));
+        return {
+            top: (top / x),
+            bottom: (bottom / x),
+            display: (top / x) + '/' + (bottom / x)
+        };
+    }
+};
+// Code above pulled from LeviathanTheGreat on GitHub
 
 retreivePeopleNum();
 showRecipes();
 eventListRecipeCards();
 totalAddedMob();
-totalRemovedMob();
+totalRemovedMob();   
 leftColExp();
-openCompareBox()
+openCompareBox();
 GetRecipeCompareSelectId();
 closePopUp();
-addRemFavourite()
-toggleNonFavourites()
+addRemFavourite();
+toggleNonFavourites();
 clearList();
+openListBox();
+closePopUpList();
