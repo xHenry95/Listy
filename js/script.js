@@ -575,41 +575,47 @@ const clearList = () => {
  *  1. Loop through the selectedList array to calculate the final output of ingredients needed
  *  2. Display the final calculations in an output dialogue to the user
  */
-function openListBox() {
+function generateList() {
+    const tempList = [];
+    for ( recipe of globalShoppingList ) {
+        for (ingredient of recipe.ingredients) {
+            ingredient.measure = parseFloat(ingredient.measure);
+            tempList.push(ingredient);
+        }
+    }
+    const length = tempList.length;
+    let finalList = [];
+    // Iterate through each ingredient in the tempList array
+    for (let i = 0; i < length; i ++) {
+        // Remove first iteration of each ingredient the script sees and store in key
+        const key = tempList.shift();
+        // Iterate through the list again to compare the key to all the remaining ingredients
+        for (let j = 0; j < tempList.length; j++) {
+            // If the key is found again (duplicate ingredient)
+            if ( key.ingredient == tempList[j].ingredient ) {
+                // Add the duplicate measure onto the key.measure
+                key.measure += tempList[j].measure;
+                // Remove the duplicate so it isn't counted again as they key in another iteration from the outer loop
+                tempList.splice(j, 1);
+            }
+        }
+        // Push the key onto the final list with duplicates eliminated and total measure summed
+        if ( key !== undefined ) {
+            finalList.push(key);
+        }
+    }
+    return finalList;
+}
+
+
+/** openListBox() */
+function openListBox(list) {
     const overlayBox = document.getElementById('lc-overlay-list');
     const makeListBtn = document.getElementById('lc-createLstBtn');
     
     makeListBtn.addEventListener('click', () => {
         // Create final list 
-        const tempList = [];
-        for ( recipe of globalShoppingList ) {
-            for (ingredient of recipe.ingredients) {
-                ingredient.measure = parseFloat(ingredient.measure);
-                tempList.push(ingredient);
-            }
-        }
-        console.log(tempList);
-        const length = tempList.length;
-        let finalList = [];
-        // Iterate through each ingredient in the tempList array
-        for (let i = 0; i < length; i ++) {
-            // Remove first iteration of each ingredient the script sees and store in key
-            const key = tempList.shift();
-            // Iterate through the list again to compare the key to all the remaining ingredients
-            for (let j = 0; j < tempList.length; j++) {
-                // If the key is found again (duplicate ingredient)
-                if ( key.ingredient == tempList[j].ingredient ) {
-                    // Add the duplicate measure onto the key.measure
-                    key.measure += tempList[j].measure;
-                    // Remove the duplicate so it isn't counted again as they key in another iteration from the outer loop
-                    tempList.splice(j, 1);
-                }
-            }
-            // Push the key onto the final list with duplicates eliminated and total measure summed
-            if ( key !== undefined ) {
-                finalList.push(key);
-            }
-        }
+        let finalList = generateList();
         console.log(finalList);
         
         // Fade in popup
@@ -617,46 +623,40 @@ function openListBox() {
         fadeOpacityIn(overlayBox);
 
         // Create HTML list 
+        // Outer container + title
 
-        // // Outer container + title
-        // const htmlList = document.createElement('div');
-        // const listTitle = document.createElement('h2');
-        // listTitle.textContent = 'Your shopping List';
-        // htmlList.appendChild(listTitle);
+        // Generate 1 list per meal with a title, add to food items
+        const foodItems = document.createElement('div');
+        const mealList = document.createElement('ul');
+        for ( meal of globalShoppingList ) {
+            for ( item of meal.ingredients ) {
+                const foodItem = document.createElement('li');
+                let measure = item.measure;
 
-        // // Generate 1 list per meal with a title, add to food items
-        // const foodItems = document.createElement('div');
-        // const mealList = document.createElement('ul');
-        // for ( meal of globalShoppingList ) {
-        //     for ( item of meal.ingredients ) {
-        //         const foodItem = document.createElement('li');
-        //         let measure = item.measure;
+                if ( measure % 1 > 0 && 
+                     item.unit !== 'g' && 
+                     item.unit !== 'ml' ) {
+                    let whole = measure - (measure % 1);
+                    let remainder = decimalToFraction(measure % 1)
+                    if ( whole > 0 && remainder.top < 5 ) {
+                        measure = `${whole}<sup>${remainder.top}</sup>/<sub>${remainder.bottom}</sub>`;
+                    } else if ( remainder.top < 5 ) {
+                        measure = `<sup>${remainder.top}</sup>/<sub>${remainder.bottom}</sub>`;
+                    }
+                } else {
+                    measure = parseInt(measure).toFixed(0);
+                }
+                if ( measure == 0 ) {
+                    measure = '';
+                }
 
-        //         if ( measure % 1 > 0 && 
-        //              item.unit !== 'g' && 
-        //              item.unit !== 'ml' ) {
-        //             let whole = measure - (measure % 1);
-        //             let remainder = decimalToFraction(measure % 1)
-        //             if ( whole > 0 && remainder.top < 5 ) {
-        //                 measure = `${whole}<sup>${remainder.top}</sup>/<sub>${remainder.bottom}</sub>`;
-        //             } else if ( remainder.top < 5 ) {
-        //                 measure = `<sup>${remainder.top}</sup>/<sub>${remainder.bottom}</sub>`;
-        //             }
-        //         } else {
-        //             measure = parseInt(measure).toFixed(0);
-        //         }
-        //         if ( measure == 0 ) {
-        //             measure = '';
-        //         }
-
-        //         foodItem.innerHTML = `<p>${measure}${item.unit} ${item.ingredient}</p>`;
-        //         mealList.appendChild(foodItem);
-        //     }
-        //     foodItems.appendChild(mealList);
-        // }
+                foodItem.innerHTML = `<p>${measure}${item.unit} ${item.ingredient}</p>`;
+                mealList.appendChild(foodItem);
+            }
+            foodItems.appendChild(mealList);
+        }
 
         // Add generated lists to the html list
-        //htmlList.appendChild(foodItems);
 
         const ListBox = document.getElementById('lc-makeListBox');
         //ListBox.appendChild(htmlList);
