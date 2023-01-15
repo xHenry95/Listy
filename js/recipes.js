@@ -70,7 +70,7 @@ const recipes = [
             {ingredient: 'Olive oil', measure: 2, unit: 'tsp', category: 'sauces & oils'},
             {ingredient: 'Pepper', measure: 2, unit: 'peppers', category: 'vegitables'},
             {ingredient: 'Courgette', measure: 160, unit: 'g', category: 'vegitables'},
-            {ingredient: 'Garlic cloves', measure: 3, unit: 'clove(s)', category: 'spices'},
+            {ingredient: 'Garlic', measure: 3, unit: 'clove(s)', category: 'spices'},
             {ingredient: 'Carton passata', measure: 500, unit: 'g', category: 'sauces & oils'},
             {ingredient: 'Smoked paprika', measure: 1, unit: 'tbsp', category: 'spices'},
             {ingredient: 'Vegitable bouillon powder', measure: 1.5, unit: 'tsp', category: 'spices'},

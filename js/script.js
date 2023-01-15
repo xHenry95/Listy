@@ -33,6 +33,23 @@ function retreivePeopleNum() {
 
     peopleNumInput.addEventListener('change', function() {
         peopleNum = this.value;
+
+        for (const [i, recipe] of selectedRecipes.entries()) {
+            const shoppingList = selectedRecipes.map(meal => {
+                const updatedIngredients = meal.ingredients.map(ingredient => {
+                    return {
+                        ...ingredient,
+                        measure: ((ingredient.measure / meal.servings) * parseInt(peopleNum) * recipe.selectedNo).toFixed(2)
+                    }
+                });
+            
+                return {
+                    ...meal,
+                    ingredients: updatedIngredients
+                }
+            });
+            globalShoppingList = shoppingList;
+        }
     })
     return parseInt(peopleNum);
 }
@@ -86,7 +103,6 @@ function showRecipes() {
 /**
  * Add event listeners
  */
-
 function eventListRecipeCards() {
     for (const [i, recipe] of recipes.entries()) {
         //Add button
@@ -122,34 +138,34 @@ function eventListRecipeCards() {
             let numberOfPeople = retreivePeopleNum();
             if (recipe.selectedNo > 0) { 
                 recipe.selectedNo--;
-            }
-            if (recipe.selectedNo === 0) {
-                recipe.selected = false;
-            }
-           
-            selectedRecipes = recipes.filter(recipe => recipe.selected === true);
-            const shoppingList = selectedRecipes.map(meal => {
-                const updatedIngredients = meal.ingredients.map(ingredient => {
+            
+                if (recipe.selectedNo === 0) {
+                    recipe.selected = false;
+                }
+            
+                selectedRecipes = recipes.filter(recipe => recipe.selected === true);
+                const shoppingList = selectedRecipes.map(meal => {
+                    const updatedIngredients = meal.ingredients.map(ingredient => {
+                        return {
+                            ...ingredient,
+                            measure: ((ingredient.measure / meal.servings) * numberOfPeople * recipe.selectedNo).toFixed(2)
+                        }
+                    });
+                
                     return {
-                        ...ingredient,
-                        measure: ((ingredient.measure / meal.servings) * numberOfPeople * recipe.selectedNo).toFixed(2)
+                        ...meal,
+                        ingredients: updatedIngredients
                     }
                 });
-            
-                return {
-                    ...meal,
-                    ingredients: updatedIngredients
-                }
-            });
-            globalShoppingList = shoppingList;
+                globalShoppingList = shoppingList;
 
-            showSelected();
+                showSelected();
+            }
         }); 
     }
 }
 
 // Listen for selections to update total number of selected recipes
-
 function totalAddedMob() {
     const totalBoxMob = document.getElementById('lc-totalAdded');
 
@@ -508,6 +524,7 @@ function deleteRecipeBtns() {
         deleteRecipeBtns[i].addEventListener('click', () => {
             // Retreive delete button
             const deleteBtn = document.getElementById(`lc-selectedTblRow${i}`);
+
             // Retreive recipe ID
             const recipeDOMId = deleteBtn.dataset.recipeid;
 
@@ -518,25 +535,14 @@ function deleteRecipeBtns() {
             foundRecipe.selected = false;
             foundRecipe.selectedNo = 0;
 
-            for (const [i, recipe] of recipes.entries()) {
-                    let numberOfPeople = retreivePeopleNum();
-                    selectedRecipes = recipes.filter(recipe => recipe.selected === true);
-                    const shoppingList = selectedRecipes.map(meal => {
-                        const updatedIngredients = meal.ingredients.map(ingredient => {
-                        return {
-                            ...ingredient,
-                            measure: ((ingredient.measure / meal.servings) * numberOfPeople * recipe.selectedNo).toFixed(2)
-                        }
-                        });
-                    
-                        return {
-                        ...meal,
-                        ingredients: updatedIngredients
-                        }
-                    });
-                globalShoppingList = shoppingList;
-                showSelected();
-            }
+            // Match deleted recipe and remove it from the users selections
+            let FoundRecipeIndex = selectedRecipes.findIndex(x => x.recipeId === parseInt(recipeDOMId));
+            selectedRecipes.splice(FoundRecipeIndex, 1);
+            globalShoppingList.splice(FoundRecipeIndex, 1);
+            console.log(selectedRecipes);
+            console.log(globalShoppingList);
+
+            showSelected();
         })
     }
 }
@@ -574,57 +580,86 @@ function openListBox() {
     const makeListBtn = document.getElementById('lc-createLstBtn');
     
     makeListBtn.addEventListener('click', () => {
+        // Create final list 
+        const tempList = [];
+        for ( recipe of globalShoppingList ) {
+            for (ingredient of recipe.ingredients) {
+                ingredient.measure = parseFloat(ingredient.measure);
+                tempList.push(ingredient);
+            }
+        }
+        console.log(tempList);
+        const length = tempList.length;
+        let finalList = [];
+        // Iterate through each ingredient in the tempList array
+        for (let i = 0; i < length; i ++) {
+            // Remove first iteration of each ingredient the script sees and store in key
+            const key = tempList.shift();
+            // Iterate through the list again to compare the key to all the remaining ingredients
+            for (let j = 0; j < tempList.length; j++) {
+                // If the key is found again (duplicate ingredient)
+                if ( key.ingredient == tempList[j].ingredient ) {
+                    // Add the duplicate measure onto the key.measure
+                    key.measure += tempList[j].measure;
+                    // Remove the duplicate so it isn't counted again as they key in another iteration from the outer loop
+                    tempList.splice(j, 1);
+                }
+            }
+            // Push the key onto the final list with duplicates eliminated and total measure summed
+            if ( key !== undefined ) {
+                finalList.push(key);
+            }
+        }
+        console.log(finalList);
+        
         // Fade in popup
         overlayBox.classList.remove('lc-noDisplay')
         fadeOpacityIn(overlayBox);
 
         // Create HTML list 
 
-        // Outer container + title
-        const htmlList = document.createElement('div');
-        const listTitle = document.createElement('h2');
-        listTitle.textContent = 'Shopping List';
-        htmlList.appendChild(listTitle);
+        // // Outer container + title
+        // const htmlList = document.createElement('div');
+        // const listTitle = document.createElement('h2');
+        // listTitle.textContent = 'Your shopping List';
+        // htmlList.appendChild(listTitle);
 
-        // Gnerate 1 list per meal with a title, add to food items
-        const foodItems = document.createElement('div');
-        for ( meal of globalShoppingList ) {
-            const mealTitle = document.createElement('h3');
-            mealTitle.textContent = meal.meal;
-            foodItems.appendChild(mealTitle);
-            const mealList = document.createElement('ul');
-            for ( item of meal.ingredients ) {
-                const foodItem = document.createElement('li');
-                let measure = item.measure;
+        // // Generate 1 list per meal with a title, add to food items
+        // const foodItems = document.createElement('div');
+        // const mealList = document.createElement('ul');
+        // for ( meal of globalShoppingList ) {
+        //     for ( item of meal.ingredients ) {
+        //         const foodItem = document.createElement('li');
+        //         let measure = item.measure;
 
-                if ( measure % 1 > 0 && 
-                     item.unit !== 'g' && 
-                     item.unit !== 'ml' ) {
-                    let whole = measure - (measure % 1);
-                    let remainder = decimalToFraction(measure % 1)
-                    if ( whole > 0 && remainder.top < 5 ) {
-                        measure = whole + remainder.display;
-                        console.log(remainder, item.ingredient);
-                    } else if ( remainder.top < 5 ) {
-                        measure = remainder.display;
-                        console.log(remainder, item.ingredient);
-                    }
-                }
-                if ( measure == 0 ) {
-                    measure = '';
-                }
+        //         if ( measure % 1 > 0 && 
+        //              item.unit !== 'g' && 
+        //              item.unit !== 'ml' ) {
+        //             let whole = measure - (measure % 1);
+        //             let remainder = decimalToFraction(measure % 1)
+        //             if ( whole > 0 && remainder.top < 5 ) {
+        //                 measure = `${whole}<sup>${remainder.top}</sup>/<sub>${remainder.bottom}</sub>`;
+        //             } else if ( remainder.top < 5 ) {
+        //                 measure = `<sup>${remainder.top}</sup>/<sub>${remainder.bottom}</sub>`;
+        //             }
+        //         } else {
+        //             measure = parseInt(measure).toFixed(0);
+        //         }
+        //         if ( measure == 0 ) {
+        //             measure = '';
+        //         }
 
-                foodItem.textContent = `${measure} ${item.unit} ${item.ingredient}`;
-                mealList.appendChild(foodItem);
-            }
-            foodItems.appendChild(mealList);
-        }
+        //         foodItem.innerHTML = `<p>${measure}${item.unit} ${item.ingredient}</p>`;
+        //         mealList.appendChild(foodItem);
+        //     }
+        //     foodItems.appendChild(mealList);
+        // }
 
         // Add generated lists to the html list
-        htmlList.appendChild(foodItems);
+        //htmlList.appendChild(foodItems);
 
         const ListBox = document.getElementById('lc-makeListBox');
-        ListBox.appendChild(htmlList);
+        //ListBox.appendChild(htmlList);
     })    
 }
 
