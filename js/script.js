@@ -604,9 +604,19 @@ function generateList() {
             finalList.push(key);
         }
     }
-    return finalList;
+    return Object.entries(sortList(finalList, 'category'));
 }
 
+function sortList(obj, prop) {
+    return obj.reduce(function (acc, item) {
+      let key = item[prop]
+      if (!acc[key]) {
+        acc[key] = []
+      }
+      acc[key].push(item)
+      return acc
+    }, [])
+  }
 
 /** openListBox() */
 function openListBox(list) {
@@ -622,22 +632,27 @@ function openListBox(list) {
         overlayBox.classList.remove('lc-noDisplay')
         fadeOpacityIn(overlayBox);
 
-        // Create HTML list 
+        // Create list box
         // Outer container + title
-
+        let listBox = document.createElement('div');
+        let listTitle = document.createElement('h2');
+        listTitle.textContent = 'Your shopping list';
+        listBox.appendChild(listTitle);
         // Generate 1 list per meal with a title, add to food items
-        const foodItems = document.createElement('div');
-        const mealList = document.createElement('ul');
-        for ( meal of globalShoppingList ) {
-            for ( item of meal.ingredients ) {
-                const foodItem = document.createElement('li');
-                let measure = item.measure;
+        let ingredientList = `<ul>`;
+        for ( category of finalList ) {
+            ingredientList += `<li class="lc-listCategory"><h4>${category[0]}</h4></li>`;
+            
+            for ( item of category[1] ) {
+                const ingredient = item.ingredient;
+                let measure = parseFloat(item.measure);
+                const unit = item.unit;
 
                 if ( measure % 1 > 0 && 
-                     item.unit !== 'g' && 
-                     item.unit !== 'ml' ) {
+                     unit !== 'g' && 
+                     unit !== 'ml' ) {
                     let whole = measure - (measure % 1);
-                    let remainder = decimalToFraction(measure % 1)
+                    let remainder = decimalToFraction(measure % 1);
                     if ( whole > 0 && remainder.top < 5 ) {
                         measure = `${whole}<sup>${remainder.top}</sup>/<sub>${remainder.bottom}</sub>`;
                     } else if ( remainder.top < 5 ) {
@@ -649,12 +664,18 @@ function openListBox(list) {
                 if ( measure == 0 ) {
                     measure = '';
                 }
-
-                foodItem.innerHTML = `<p>${measure}${item.unit} ${item.ingredient}</p>`;
-                mealList.appendChild(foodItem);
+                if ( unit == 'g' || unit == 'ml') {
+                    ingredientList += `<li><p>${measure}${unit} ${ingredient}</p></li>`;
+                } else {
+                    ingredientList += `<li><p>${measure} ${unit} ${ingredient}</p></li>`;
+                }
             }
-            foodItems.appendChild(mealList);
+
+
         }
+            listBox += ingredientList;
+            listBox += `</ul>`;
+            document.getElementById('lc-makeListBox').innerHTML = listBox;
 
         // Add generated lists to the html list
 
