@@ -319,6 +319,16 @@ a:hover {
   color: black;
 }
 
+.finalList {
+  height: 100%;
+  column-count: 4;
+}
+
+.finalList li, .finalList li p {
+  padding: 3px 0 2px 0;
+  margin: 0;
+}
+
 @media (min-width: 1920px) { 
     body {
       font-size: 120%;
@@ -594,6 +604,16 @@ a:hover {
   border-radius: 25px;
 }
 
+.hideScrolWin-list {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  height: 82vh;
+  right: 3.75%;
+  top: 11%;
+  left: 3.75%;  
+  border-radius: 25px;
+}
+
 #lc-popupBox {
   background-color: white;
   position: fixed;
@@ -609,6 +629,25 @@ a:hover {
 }
 
 #lc-popupBox > div {
+  width: 95%;
+  height: 95%;
+}
+
+#lc-popupBox-list {
+  background-color: white;
+  position: fixed;
+  height: 80vh;
+  right: 8%;
+  top: 12%;
+  left: 8%;  
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+}
+
+#lc-popupBox-list > div {
   width: 95%;
   height: 95%;
 }

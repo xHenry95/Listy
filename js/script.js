@@ -14,7 +14,7 @@ const minus = `<path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-
 const plus = `<path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>`;
 const xMark = `<path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>`;
 const xSolid = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>`;
-
+const copyText = ``
 let selectedRecipes = [];
 let globalShoppingList;
 let totalAdded = 0;
@@ -634,12 +634,14 @@ function openListBox(list) {
 
         // Create list box
         // Outer container + title
-        let listBox = document.createElement('div');
-        let listTitle = document.createElement('h2');
-        listTitle.textContent = 'Your shopping list';
-        listBox.appendChild(listTitle);
+        let listBox = `
+            <div>
+            <h3>Your shopping list</h3>
+            <button class="mainNavBtn">Copy list ${copyText}</button>
+            <button class="mainNavBtn">Edit list ${copyText}</button>
+            `;
         // Generate 1 list per meal with a title, add to food items
-        let ingredientList = `<ul>`;
+        let ingredientList = `<ul class="finalList">`;
         for ( category of finalList ) {
             ingredientList += `<li class="lc-listCategory"><h4>${category[0]}</h4></li>`;
             
@@ -674,13 +676,13 @@ function openListBox(list) {
 
         }
             listBox += ingredientList;
-            listBox += `</ul>`;
+            listBox += `</ul></div>`;
             document.getElementById('lc-makeListBox').innerHTML = listBox;
 
         // Add generated lists to the html list
 
         const ListBox = document.getElementById('lc-makeListBox');
-        //ListBox.appendChild(htmlList);
+
     })    
 }
 
