@@ -320,8 +320,12 @@ a:hover {
 }
 
 .finalList {
-  height: 100%;
-  column-count: 4;
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  list-style: outside;
+
 }
 
 .finalList li, .finalList li p {
@@ -644,12 +648,13 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 #lc-popupBox-list > div {
   width: 95%;
   height: 95%;
+  display: flex;
 }
 
 .lc-popUpXBox {

@@ -636,14 +636,13 @@ function openListBox(list) {
         // Outer container + title
         let listBox = `
             <div>
-            <h3>Your shopping list</h3>
+            <h2>Your shopping list</h2>
             <button class="mainNavBtn">Copy list ${copyText}</button>
             <button class="mainNavBtn">Edit list ${copyText}</button>
             `;
         // Generate 1 list per meal with a title, add to food items
         let ingredientList = `<ul class="finalList">`;
         for ( category of finalList ) {
-            ingredientList += `<li class="lc-listCategory"><h4>${category[0]}</h4></li>`;
             
             for ( item of category[1] ) {
                 const ingredient = item.ingredient;

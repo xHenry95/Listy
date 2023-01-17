@@ -134,7 +134,7 @@ const recipes = [
         meal: 'Luchito Mexican Chicken Stew',
         ingredients: [
             {ingredient: 'Chicken breast', measure: 800, unit: 'g', category: 'meat & poultry'},
-            {ingredient: 'Fresh sweetcorn', measure: 800, unit: 'g', category: 'vegitables'},
+            {ingredient: 'Fresh sweetcorn', measure: 200, unit: 'g', category: 'vegitables'},
             {ingredient: 'Tomato puree', measure: 1, unit: 'tbsp', category: 'sauces & oils'},
             {ingredient: 'Chopped tomatos', measure: 400, unit: 'g', category: 'vegitables'},
             {ingredient: 'Gran Luchito chipotle paste', measure: 1, unit: 'tbsp', category: 'spices'},
@@ -164,7 +164,7 @@ const recipes = [
         current: false,
         recipeId: 5
     },
-    {
+    { 
         meal: 'Sheet Pan Roasted Chicken, Sweet Potatoes & Broccoli',
         ingredients: [
             {ingredient: 'Chicken breasts', measure: 4, unit: 'breasts', category: 'meat & poultry'},
