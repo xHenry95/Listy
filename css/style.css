@@ -325,12 +325,14 @@ a:hover {
   flex-wrap: wrap;
   flex-direction: column;
   list-style: outside;
-
+  column-gap: 100px;
 }
 
 .finalList li, .finalList li p {
   padding: 3px 0 2px 0;
   margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 @media (min-width: 1920px) { 

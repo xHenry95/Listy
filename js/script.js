@@ -685,6 +685,12 @@ function openListBox(list) {
     })    
 }
 
+/** editList() */
+function editList() {
+    const parentListBox = document.getElementById('lc-makeListBox');
+    
+}
+
 let closePopUpList = () => {
     const closePopUpBtn = document.getElementsByClassName('lc-closePopup')[1];
     const overlayBox = document.getElementById('lc-overlay-list');
