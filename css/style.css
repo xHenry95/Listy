@@ -328,6 +328,13 @@ a:hover {
   column-gap: 100px;
 }
 
+.editListItemSVG {
+  width: 15px; 
+  height: 15px;
+  fill: var(--mainGrey);
+  margin-left: 10px;
+}
+
 .finalList li, .finalList li p {
   padding: 3px 0 2px 0;
   margin: 0;

@@ -14,7 +14,8 @@ const minus = `<path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-
 const plus = `<path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>`;
 const xMark = `<path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/>`;
 const xSolid = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>`;
-const copyText = ``
+const copyText = ``;
+const editIcon = `<path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/>`;
 let selectedRecipes = [];
 let globalShoppingList;
 let totalAdded = 0;
@@ -637,8 +638,8 @@ function openListBox(list) {
         let listBox = `
             <div>
             <h2>Your shopping list</h2>
-            <button class="mainNavBtn">Copy list ${copyText}</button>
-            <button class="mainNavBtn">Edit list ${copyText}</button>
+            <button class="mainNavBtn">Copy list</button>
+            <button class="mainNavBtn">Edit list</button>
             `;
         // Generate 1 list per meal with a title, add to food items
         let ingredientList = `<ul class="finalList">`;
@@ -666,9 +667,9 @@ function openListBox(list) {
                     measure = '';
                 }
                 if ( unit == 'g' || unit == 'ml') {
-                    ingredientList += `<li><p>${measure}${unit} ${ingredient}</p></li>`;
+                    ingredientList += `<li><p><span>${measure}</span><span>${unit}</span> <span>${ingredient}</span></p></li>`;
                 } else {
-                    ingredientList += `<li><p>${measure} ${unit} ${ingredient}</p></li>`;
+                    ingredientList += `<li><p><span>${measure}</span> <span>${unit}</span> <span>${ingredient}</span></p></li>`;
                 }
             }
 
@@ -688,8 +689,23 @@ function openListBox(list) {
 /** editList() */
 function editList() {
     const parentListBox = document.getElementById('lc-makeListBox');
-    
+
+    parentListBox.addEventListener('click', (e) => {
+        if ( e.target.textContent == 'Edit list' && e.target.tagName == 'BUTTON') {
+            const liPara = document.querySelectorAll('.finalList li p');
+
+            liPara.forEach((item) => {
+                const editBtn = document.createElement('button');
+                editBtn.innerHTML = `<span class=><svg class="editListItemSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">${editIcon}</svg></span>`;
+            
+                item.appendChild(editBtn);
+            })
+            e.target.textContent = 'Save';
+
+        }
+    })
 }
+editList();
 
 let closePopUpList = () => {
     const closePopUpBtn = document.getElementsByClassName('lc-closePopup')[1];
