@@ -863,24 +863,11 @@ sup {
     #lc-selected > h2 {
       display: inline;
     }
-    #lc-selected {
-    }
     #lc-selectedTable {
       margin-top: 20px;
     }
-    .lc-selectedTblRow td {
-    }
-    #lc-selectedTable td:first-child, #lc-selectedTable th:first-child {
-      
-    }
-    #lc-selectedTable td:last-child, #lc-selectedTable th:last-child {
-      
-    }
     #lc-selectedMealCol {
       width: 230px;
-    }
-    #lc-selectedTable td {
-      
     }
     #lc-finishBtns {
       position: fixed;
@@ -889,15 +876,8 @@ sup {
       height: 75px;
       z-index: 5;
     }
-    
-    #lc-genResBtns {
-    }
     /* ----- */
-
-    #mainNav {
-    }
-    .navbar {
-    }
+    
     #lc-recipeBox {
       position: relative;
       display: flex;
@@ -909,9 +889,6 @@ sup {
     .lc-recipeCard {
       min-height: 250px;
       width: 100%;
-    }
-    .lc-recipePhoto {
-
     }
     #lc-popupBox {
       height: 95vh;
@@ -929,8 +906,6 @@ sup {
       white-space: normal;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-    .lc-NutritionTbl th {
     }
 }
 /* --- */
