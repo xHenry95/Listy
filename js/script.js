@@ -691,17 +691,20 @@ function editList() {
     const parentListBox = document.getElementById('lc-makeListBox');
 
     parentListBox.addEventListener('click', (e) => {
+        console.log(e.target.parentElement.className);
         if ( e.target.textContent == 'Edit list' && e.target.tagName == 'BUTTON') {
             const liPara = document.querySelectorAll('.finalList li p');
-
             liPara.forEach((item) => {
                 const editBtn = document.createElement('button');
-                editBtn.innerHTML = `<span class=><svg class="editListItemSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">${editIcon}</svg></span>`;
-            
+                const deleteBtn = document.createElement('button');
+                editBtn.innerHTML = `<span class=><svg class="editListItemSVG" viewBox="0 0 512 512">${editIcon}</svg></span>`;
+                deleteBtn.innerHTML = `<span class=><svg class="deleteListItemSVG" viewBox="0 0 512 512">${xMark}</svg></span>` 
                 item.appendChild(editBtn);
+                item.appendChild(deleteBtn);
             })
             e.target.textContent = 'Save';
-
+        } else if ( e.target.parentElement.tagName == 'svg' && e.target.parentElement.className == 'deleteListItemSVG' ) {
+            parentListBox.style.backgroundColor = 'blue';
         }
     })
 }
