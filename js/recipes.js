@@ -3,7 +3,7 @@ const recipes = [
         meal: 'Beef & Sichuan pepper stir-fry',
         ingredients: [
             {ingredient: 'Rapeseed oil', measure: 2, unit: 'tbsp', category: 'sauces & oils'},
-            {ingredient: 'Steak', measure: 300, unit: 'g', category: 'meat & poultry'},
+            {ingredient: 'Steak', measure: 300, unit: 'g', category: 'meat, fish & poultry'},
             {ingredient: 'Cornflour', measure: 1, unit: 'tbsp', category: 'baking'},
             {ingredient: 'Mixed pepper', measure: 2, unit: 'pepper(s)', category: 'vegitables'},
             {ingredient: 'Baby corn', measure: 200, unit: 'g', category: 'vegitables'},
@@ -35,7 +35,7 @@ const recipes = [
         meal: 'Crispy Chili Turkey Noodles',
         ingredients: [
             {ingredient: 'Sesame oil', measure: 2, unit: 'tbsp', category: 'sauces & oils'},
-            {ingredient: 'Turkey mince', measure: 500, unit: 'g', category: 'meat & poultry'},
+            {ingredient: 'Turkey mince', measure: 500, unit: 'g', category: 'meat, fish & poultry'},
             {ingredient: 'Fresh ginger', measure: 5, unit: 'cm', category: 'spices'},
             {ingredient: 'Garlic', measure: 1, unit: 'clove', category: 'spices'},
             {ingredient: 'Honey', measure: 3, unit: 'tbsp', category: 'carbohydrates'},
@@ -76,7 +76,7 @@ const recipes = [
             {ingredient: 'Vegitable bouillon powder', measure: 1.5, unit: 'tsp', category: 'spices'},
             {ingredient: 'Chilli powder', measure: 1, unit: 'tsp', category: 'spices'},
             {ingredient: 'Kalamata olives', measure: 25, unit: 'g', category: 'fruits'},
-            {ingredient: 'Diced chicken breast', measure: 400, unit: 'g', category: 'meat & poultry'},
+            {ingredient: 'Diced chicken breast', measure: 400, unit: 'g', category: 'meat, fish & poultry'},
             {ingredient: 'Fresh basil', measure: 1, unit: 'handful', category: 'herbs'},
             {ingredient: 'Ricotta', measure: 100, unit: 'g', category: 'dairy'},
             {ingredient: 'Mature cheddar', measure: 20, unit: 'g', category: 'dairy'}
@@ -101,7 +101,7 @@ const recipes = [
     {
         meal: 'Low fat Turkey Bolognese',
         ingredients: [
-            {ingredient: 'Turkey mince', measure: 400, unit: 'g', category: 'meat & poultry'},
+            {ingredient: 'Turkey mince', measure: 400, unit: 'g', category: 'meat, fish & poultry'},
             {ingredient: 'Vegitable oil', measure: 2, unit: 'tbsp', category: 'sauces & oils'},
             {ingredient: 'Brown onion', measure: 1, unit: 'onion', category: 'vegitables'},
             {ingredient: 'Large carrot', measure: 1, unit: 'carrot', category: 'vegitables'},
@@ -133,7 +133,7 @@ const recipes = [
     {
         meal: 'Luchito Mexican Chicken Stew',
         ingredients: [
-            {ingredient: 'Chicken breast', measure: 800, unit: 'g', category: 'meat & poultry'},
+            {ingredient: 'Chicken breast', measure: 800, unit: 'g', category: 'meat, fish & poultry'},
             {ingredient: 'Fresh sweetcorn', measure: 200, unit: 'g', category: 'vegitables'},
             {ingredient: 'Tomato puree', measure: 1, unit: 'tbsp', category: 'sauces & oils'},
             {ingredient: 'Chopped tomatos', measure: 400, unit: 'g', category: 'vegitables'},
@@ -167,7 +167,7 @@ const recipes = [
     { 
         meal: 'Sheet Pan Roasted Chicken, Sweet Potatoes & Broccoli',
         ingredients: [
-            {ingredient: 'Chicken breasts', measure: 4, unit: 'breasts', category: 'meat & poultry'},
+            {ingredient: 'Chicken breasts', measure: 4, unit: 'breasts', category: 'meat, fish & poultry'},
             {ingredient: 'Cajun seasoning', measure: 2, unit: 'tbsp', category: 'spices'},
             {ingredient: 'Garlic', measure: 3, unit: 'cloves', category: 'spices'},
             {ingredient: 'Lemon juice', measure: 1, unit: 'tbsp', category: 'sauces & oils'},
@@ -198,7 +198,7 @@ const recipes = [
         meal: 'Stir-fried Chicken with Broccoli and Brown Rice',
         ingredients: [
             {ingredient: 'Brocolli', measure: 200, unit: 'g', category: 'vegitables'},
-            {ingredient: 'Chicken breast', measure: 1, unit: 'breast', category: 'meat & poultry'},
+            {ingredient: 'Chicken breast', measure: 1, unit: 'breast', category: 'meat, fish & poultry'},
             {ingredient: 'Fresh ginger', measure: 15, unit: 'g', category: 'spices'},
             {ingredient: 'Garlic', measure: 1, unit: 'clove', category: 'spices'},
             {ingredient: 'Red onion', measure: 1, unit: 'onion', category: 'vegitables'},
@@ -236,7 +236,7 @@ const recipes = [
             {ingredient: 'Rice vinegar (or apple cider vinegar)', measure: 1, unit: 'tsp', category: 'sauces & oils'},
             {ingredient: 'Arrowroot powder', measure: 1, unit: 'tbsp', category: 'baking'},
             {ingredient: 'Avocado oil', measure: 2, unit: 'tbsp', category: 'sauces & oils'},
-            {ingredient: 'Chicken breast', measure: 455, unit: 'g', category: 'meat & poultry'},
+            {ingredient: 'Chicken breast', measure: 455, unit: 'g', category: 'meat, fish & poultry'},
             {ingredient: 'Red bell pepper', measure: 1, unit: 'pepper', category: 'vegitables'},
             {ingredient: 'Carrot', measure: 1, unit: 'carrot', category: 'vegitables'},
             {ingredient: 'Broccoli', measure: 145, unit: 'g', category: 'vegitables'},
@@ -272,7 +272,7 @@ const recipes = [
             {ingredient: 'Olive oil', measure: 1, unit: 'tsp', category: 'sauces & oils'},
             {ingredient: 'Garlic powder', measure: 1, unit: 'pinch', category: 'spices'},
             {ingredient: 'Tomato sauce', measure: 3, unit: 'tbsp', category: 'sauces & oils'},
-            {ingredient: 'Chicken breast', measure: 1, unit: 'breast', category: 'meat & poultry'},
+            {ingredient: 'Chicken breast', measure: 1, unit: 'breast', category: 'meat, fish & poultry'},
             {ingredient: 'Bell pepper', measure: 0.5, unit: 'pepper', category: 'vegitables'},
             {ingredient: 'Green onion', measure: 2, unit: 'onion', category: 'vegitables'},
             {ingredient: 'Shredded mozzarella cheese', measure: 75, unit: 'grams', category: 'dairy'},
@@ -296,38 +296,39 @@ const recipes = [
         selectedNo: 0,
         current: false,
         recipeId: 9
+    },
+    {
+        meal: 'Roast chicken & pea risotto',
+        ingredients: [
+            {ingredient: 'Vegitable oil', measure: 1, unit: 'tbsp', category: 'sauces & oils'},
+            {ingredient: 'Brown onion', measure: 1, unit: '', category: 'vegitables'},
+            {ingredient: 'Garlic', measure: 1, unit: 'clove(s)', category: 'spices'},
+            {ingredient: 'Risotto rice', measure: 350, unit: '350g', category: 'pasta & rice'},
+            {ingredient: 'White wine', measure: 125, unit: 'ml', category: 'drinks'},
+            {ingredient: 'Chicken stock', measure: 1000, unit: 'ml', category: 'broths & stocks'},
+            {ingredient: 'Chicken breast', measure: 108, unit: 'g', category: 'meat, fish & poultry'},
+            {ingredient: 'Thyme', measure: 1, unit: 'tbsp', category: 'herbs'},
+            {ingredient: 'Frozen peas', measure: 200, unit: 'g', category: 'vegitables'},
+            {ingredient: 'Creme fraiche', measure: 1, unit: 'tbsp', category: 'dairy'},
+            {ingredient: 'Parmesan', measure: 2, unit: 'tbsp', category: 'dairy'}
+        ],
+        servings: 4,
+        kcal: 641,
+        fat: 20,
+        saturates: 7,
+        carbs: 77,
+        sugars: 4,
+        fibre: 5,
+        protein: 42,
+        description: 'Make something special from your leftover roast chicken with this rich, creamy recipe.',
+        source: 'https://www.bbcgoodfood.com/recipes/roast-chicken-pea-risotto',
+        imgPath: 'img/RoastChickenPeaRisotto.png',
+        favorite: false,
+        selected: false,
+        selectedNo: 0,
+        current: false,
+        recipeId: 10
     }
-    // {
-    //     meal: '',
-    //     ingredients: [
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''},
-    //         {ingredient: '', measure: , unit: '', category: ''}
-    //     ],
-    //     servings: ,
-    //     kcal: ,
-    //     fat: ,
-    //     saturates: ,
-    //     carbs: ,
-    //     sugars: ,
-    //     fibre: ,
-    //     protein: ,
-    //     description: '',
-    //     source: '',
-    //     imgPath: '',
-    //     favorite: false,
-    //     selected: false,
-    //     selectedNo: 0,
-    //     current: false,
-    //     recipeId: 10
-    // }
     /* {
         meal: '',
         ingredients: [
