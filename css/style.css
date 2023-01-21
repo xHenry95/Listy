@@ -514,6 +514,7 @@ a:hover {
 .cardFav:hover {
   cursor: pointer;
 }
+
 .favCheckbox {
   transform: scale(2.7);
   position: absolute;
